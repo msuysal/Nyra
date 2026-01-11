@@ -1852,6 +1852,23 @@ select:focus {
     font-size: 16px;
 }
 
+/* Phone Input */
+.phone-input-wrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.country-code {
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.country-code select {
+    text-align: center;
+    padding-left: 8px;
+    /* Adjustment for center text */
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
