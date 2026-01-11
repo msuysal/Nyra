@@ -11,35 +11,83 @@ window.addEventListener('scroll', () => {
 // Dashboard Interaction
 const dashboardData = {
     awareness: {
-        title: "Brand Awareness",
-        results: "Campaign: 'Fintech platform for CFOs in Europe'",
+        title: "Awareness & Reach",
+        results: "Campaign: 'Expand brand visibility in European fintech'",
         cards: [
             { name: "Dr. Elena Rostova", handle: "@FinTech_CFO", score: "98%", auth: "96%", reach: "245k", eng: "8.2%", img: 1 },
             { name: "Marcus Weber", handle: "@EuroFinance", score: "94%", auth: "91%", reach: "180k", eng: "6.5%", img: 2 }
         ]
     },
-    event: {
-        title: "Event Amplification",
-        results: "Campaign: 'AI Summit in London—target tech leaders'",
+    review: {
+        title: "Product Review / Demo",
+        results: "Campaign: 'Get SaaS platform reviewed by tech influencers'",
         cards: [
-            { name: "Sarah Chen", handle: "@AI_Summit_EU", score: "97%", auth: "94%", reach: "320k", eng: "7.8%", img: 3 },
-            { name: "Tech Events UK", handle: "@TechEventsUK", score: "93%", auth: "89%", reach: "450k", eng: "5.2%", img: 4 }
+            { name: "Tech Reviewer Pro", handle: "@TechReviewPro", score: "97%", auth: "95%", reach: "420k", eng: "9.1%", img: 3 },
+            { name: "Sarah Chen", handle: "@SaaS_Insights", score: "93%", auth: "90%", reach: "280k", eng: "7.5%", img: 4 }
         ]
     },
-    content: {
-        title: "Content Distribution",
-        results: "Campaign: 'ESG whitepaper for sustainability officers'",
+    sales: {
+        title: "Sales Partnership",
+        results: "Campaign: 'Partner with affiliates to drive conversions'",
         cards: [
-            { name: "Green Business", handle: "@GreenBiz_ESG", score: "96%", auth: "95%", reach: "180k", eng: "9.1%", img: 5 },
-            { name: "Sustainability Pro", handle: "@SustainPro", score: "92%", auth: "88%", reach: "210k", eng: "6.8%", img: 6 }
+            { name: "Growth Hacker", handle: "@GrowthPartner", score: "96%", auth: "94%", reach: "310k", eng: "8.8%", img: 5 },
+            { name: "Sales Enabler", handle: "@B2B_Sales", score: "92%", auth: "89%", reach: "195k", eng: "6.9%", img: 6 }
         ]
     },
     thought: {
         title: "Thought Leadership",
-        results: "Campaign: 'Position CEO as Web3 authority'",
+        results: "Campaign: 'Position CEO as AI ethics authority'",
         cards: [
-            { name: "Crypto Analyst", handle: "@Web3_Insights", score: "99%", auth: "98%", reach: "520k", eng: "8.9%", img: 7 },
-            { name: "Blockchain Today", handle: "@BlockchainNow", score: "95%", auth: "93%", reach: "380k", eng: "7.2%", img: 8 }
+            { name: "AI Ethics Leader", handle: "@AI_Ethics", score: "99%", auth: "98%", reach: "520k", eng: "9.5%", img: 7 },
+            { name: "Industry Analyst", handle: "@TechAnalyst", score: "95%", auth: "93%", reach: "380k", eng: "7.8%", img: 8 }
+        ]
+    },
+    technical: {
+        title: "Technical Trust & Credibility",
+        results: "Campaign: 'Build trust in cloud infrastructure capabilities'",
+        cards: [
+            { name: "DevOps Expert", handle: "@CloudArchitect", score: "97%", auth: "96%", reach: "290k", eng: "8.4%", img: 9 },
+            { name: "Security Pro", handle: "@InfoSec_Lead", score: "94%", auth: "92%", reach: "215k", eng: "7.2%", img: 10 }
+        ]
+    },
+    education: {
+        title: "Market Education",
+        results: "Campaign: 'Educate market about Web3 solutions'",
+        cards: [
+            { name: "Web3 Educator", handle: "@Web3_Academy", score: "96%", auth: "94%", reach: "350k", eng: "8.9%", img: 11 },
+            { name: "Blockchain Guide", handle: "@Blockchain101", score: "93%", auth: "90%", reach: "260k", eng: "7.6%", img: 12 }
+        ]
+    },
+    whitepaper: {
+        title: "Whitepaper Collaboration",
+        results: "Campaign: 'Co-create ESG whitepaper with thought leaders'",
+        cards: [
+            { name: "ESG Authority", handle: "@ESG_Research", score: "98%", auth: "97%", reach: "180k", eng: "9.2%", img: 13 },
+            { name: "Sustainability Expert", handle: "@GreenBiz", score: "95%", auth: "93%", reach: "220k", eng: "8.1%", img: 14 }
+        ]
+    },
+    reputation: {
+        title: "Reputation & Trust Building",
+        results: "Campaign: 'Enhance brand reputation in enterprise market'",
+        cards: [
+            { name: "Enterprise Advocate", handle: "@Enterprise_Pro", score: "97%", auth: "95%", reach: "410k", eng: "8.7%", img: 15 },
+            { name: "Trust Builder", handle: "@B2B_Trust", score: "94%", auth: "91%", reach: "305k", eng: "7.4%", img: 16 }
+        ]
+    },
+    affinity: {
+        title: "Brand Affinity",
+        results: "Campaign: 'Create emotional connections with developer community'",
+        cards: [
+            { name: "Developer Advocate", handle: "@DevCommunity", score: "96%", auth: "94%", reach: "380k", eng: "9.3%", img: 17 },
+            { name: "Tech Storyteller", handle: "@CodeStories", score: "93%", auth: "90%", reach: "270k", eng: "8.0%", img: 18 }
+        ]
+    },
+    event: {
+        title: "Event Amplification",
+        results: "Campaign: 'Boost AI Summit attendance and visibility'",
+        cards: [
+            { name: "Event Promoter", handle: "@TechEvents_EU", score: "97%", auth: "94%", reach: "450k", eng: "8.6%", img: 19 },
+            { name: "Conference Host", handle: "@AI_Summit", score: "94%", auth: "91%", reach: "320k", eng: "7.7%", img: 20 }
         ]
     }
 };
