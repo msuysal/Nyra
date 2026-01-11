@@ -12,82 +12,82 @@ window.addEventListener('scroll', () => {
 const dashboardData = {
     awareness: {
         title: "Awareness & Reach",
-        results: "Campaign: 'Expand brand visibility in European fintech'",
+        results: "Expand your audience and increase brand visibility",
         cards: [
-            { name: "Dr. Elena Rostova", handle: "@FinTech_CFO", score: "98%", auth: "96%", reach: "245k", eng: "8.2%", img: 1 },
-            { name: "Marcus Weber", handle: "@EuroFinance", score: "94%", auth: "91%", reach: "180k", eng: "6.5%", img: 2 }
+            { name: "Target Audience", handle: "Precision Matching", score: "98%", auth: "Reach: 2.5M+", reach: "Engagement", eng: "High Intent", img: 1 },
+            { name: "Expected Outcome", handle: "Brand Mentions", score: "3.2x", auth: "Impressions", reach: "5M-8M", eng: "Share Rate: 12%", img: 2 }
         ]
     },
     review: {
         title: "Product Review / Demo",
-        results: "Campaign: 'Get SaaS platform reviewed by tech influencers'",
+        results: "Get your product reviewed by industry influencers",
         cards: [
-            { name: "Tech Reviewer Pro", handle: "@TechReviewPro", score: "97%", auth: "95%", reach: "420k", eng: "9.1%", img: 3 },
-            { name: "Sarah Chen", handle: "@SaaS_Insights", score: "93%", auth: "90%", reach: "280k", eng: "7.5%", img: 4 }
+            { name: "Review Quality", handle: "In-depth Analysis", score: "95%", auth: "Video + Article", reach: "Tech Audience", eng: "High Trust", img: 3 },
+            { name: "Impact Forecast", handle: "Trial Signups", score: "+180%", auth: "Demo Requests", reach: "+240", eng: "Conversion: 8%", img: 4 }
         ]
     },
     sales: {
         title: "Sales Partnership",
-        results: "Campaign: 'Partner with affiliates to drive conversions'",
+        results: "Create partnerships that drive sales and conversions",
         cards: [
-            { name: "Growth Hacker", handle: "@GrowthPartner", score: "96%", auth: "94%", reach: "310k", eng: "8.8%", img: 5 },
-            { name: "Sales Enabler", handle: "@B2B_Sales", score: "92%", auth: "89%", reach: "195k", eng: "6.9%", img: 6 }
+            { name: "Partnership Type", handle: "Affiliate Program", score: "92%", auth: "Revenue Share", reach: "Performance", eng: "Tracked ROI", img: 5 },
+            { name: "Revenue Impact", handle: "Pipeline Value", score: "$2.4M", auth: "Close Rate", reach: "18%", eng: "CAC: -35%", img: 6 }
         ]
     },
     thought: {
         title: "Thought Leadership",
-        results: "Campaign: 'Position CEO as AI ethics authority'",
+        results: "Position your brand as an industry expert",
         cards: [
-            { name: "AI Ethics Leader", handle: "@AI_Ethics", score: "99%", auth: "98%", reach: "520k", eng: "9.5%", img: 7 },
-            { name: "Industry Analyst", handle: "@TechAnalyst", score: "95%", auth: "93%", reach: "380k", eng: "7.8%", img: 8 }
+            { name: "Authority Building", handle: "Expert Positioning", score: "99%", auth: "Speaking Ops", reach: "3-5 Events", eng: "Media Features", img: 7 },
+            { name: "Long-term Value", handle: "Brand Equity", score: "+45%", auth: "Inbound Leads", reach: "+320%", eng: "Premium Pricing", img: 8 }
         ]
     },
     technical: {
         title: "Technical Trust & Credibility",
-        results: "Campaign: 'Build trust in cloud infrastructure capabilities'",
+        results: "Build trust in your technical capabilities",
         cards: [
-            { name: "DevOps Expert", handle: "@CloudArchitect", score: "97%", auth: "96%", reach: "290k", eng: "8.4%", img: 9 },
-            { name: "Security Pro", handle: "@InfoSec_Lead", score: "94%", auth: "92%", reach: "215k", eng: "7.2%", img: 10 }
+            { name: "Validation Method", handle: "Technical Review", score: "97%", auth: "Code Analysis", reach: "Architecture", eng: "Security Audit", img: 9 },
+            { name: "Trust Metrics", handle: "Enterprise Deals", score: "+65%", auth: "Sales Cycle", reach: "-40%", eng: "Win Rate: 28%", img: 10 }
         ]
     },
     education: {
         title: "Market Education",
-        results: "Campaign: 'Educate market about Web3 solutions'",
+        results: "Educate your audience about your industry or solution",
         cards: [
-            { name: "Web3 Educator", handle: "@Web3_Academy", score: "96%", auth: "94%", reach: "350k", eng: "8.9%", img: 11 },
-            { name: "Blockchain Guide", handle: "@Blockchain101", score: "93%", auth: "90%", reach: "260k", eng: "7.6%", img: 12 }
+            { name: "Content Strategy", handle: "Educational Series", score: "94%", auth: "Webinars", reach: "Workshops", eng: "Guides", img: 11 },
+            { name: "Awareness Growth", handle: "Market Understanding", score: "+210%", auth: "Qualified Leads", reach: "+180", eng: "Engagement: 15%", img: 12 }
         ]
     },
     whitepaper: {
         title: "Whitepaper Collaboration",
-        results: "Campaign: 'Co-create ESG whitepaper with thought leaders'",
+        results: "Create authoritative content with industry experts",
         cards: [
-            { name: "ESG Authority", handle: "@ESG_Research", score: "98%", auth: "97%", reach: "180k", eng: "9.2%", img: 13 },
-            { name: "Sustainability Expert", handle: "@GreenBiz", score: "95%", auth: "93%", reach: "220k", eng: "8.1%", img: 14 }
+            { name: "Co-Creation", handle: "Expert Collaboration", score: "96%", auth: "Research Data", reach: "Case Studies", eng: "Peer Review", img: 13 },
+            { name: "Distribution", handle: "Downloads", score: "8,500+", auth: "Media Pickup", reach: "12 outlets", eng: "Leads: 340", img: 14 }
         ]
     },
     reputation: {
         title: "Reputation & Trust Building",
-        results: "Campaign: 'Enhance brand reputation in enterprise market'",
+        results: "Enhance your brand's reputation in the market",
         cards: [
-            { name: "Enterprise Advocate", handle: "@Enterprise_Pro", score: "97%", auth: "95%", reach: "410k", eng: "8.7%", img: 15 },
-            { name: "Trust Builder", handle: "@B2B_Trust", score: "94%", auth: "91%", reach: "305k", eng: "7.4%", img: 16 }
+            { name: "Trust Signals", handle: "Third-party Validation", score: "98%", auth: "Testimonials", reach: "Case Studies", eng: "Awards", img: 15 },
+            { name: "Market Perception", handle: "Brand Sentiment", score: "+52%", auth: "NPS Score", reach: "+18 pts", eng: "Referrals: +90%", img: 16 }
         ]
     },
     affinity: {
         title: "Brand Affinity",
-        results: "Campaign: 'Create emotional connections with developer community'",
+        results: "Create emotional connections with your audience",
         cards: [
-            { name: "Developer Advocate", handle: "@DevCommunity", score: "96%", auth: "94%", reach: "380k", eng: "9.3%", img: 17 },
-            { name: "Tech Storyteller", handle: "@CodeStories", score: "93%", auth: "90%", reach: "270k", eng: "8.0%", img: 18 }
+            { name: "Community Building", handle: "Engagement Programs", score: "93%", auth: "User Stories", reach: "Ambassador", eng: "Loyalty", img: 17 },
+            { name: "Retention Impact", handle: "Customer LTV", score: "+125%", auth: "Churn Rate", reach: "-45%", eng: "Advocacy: High", img: 18 }
         ]
     },
     event: {
         title: "Event Amplification",
-        results: "Campaign: 'Boost AI Summit attendance and visibility'",
+        results: "Boost visibility and attendance for your events",
         cards: [
-            { name: "Event Promoter", handle: "@TechEvents_EU", score: "97%", auth: "94%", reach: "450k", eng: "8.6%", img: 19 },
-            { name: "Conference Host", handle: "@AI_Summit", score: "94%", auth: "91%", reach: "320k", eng: "7.7%", img: 20 }
+            { name: "Promotion Strategy", handle: "Multi-channel Push", score: "97%", auth: "Social Buzz", reach: "Email Reach", eng: "Partnerships", img: 19 },
+            { name: "Event Success", handle: "Attendance", score: "+240%", auth: "Engagement", reach: "High", eng: "Leads: 580", img: 20 }
         ]
     }
 };
