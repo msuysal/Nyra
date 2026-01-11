@@ -1070,15 +1070,15 @@ h1 {
     border: 1px solid var(--border-light);
 }
 
-.c1 {
+.avatar-c1 {
     background-image: url('https://i.pravatar.cc/150?u=1');
 }
 
-.c2 {
+.avatar-c2 {
     background-image: url('https://i.pravatar.cc/150?u=2');
 }
 
-.c3 {
+.avatar-c3 {
     background-image: url('https://i.pravatar.cc/150?u=3');
 }
 
