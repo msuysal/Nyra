@@ -10,36 +10,36 @@ window.addEventListener('scroll', () => {
 
 // Dashboard Interaction
 const dashboardData = {
-    prompt: {
-        title: "You Prompt",
-        results: "Example: 'KOLs in Fintech for CFOs in Europe'",
+    awareness: {
+        title: "Brand Awareness",
+        results: "Campaign: 'Fintech platform for CFOs in Europe'",
         cards: [
-            { name: "Campaign Input", handle: "Natural Language", score: "100%", auth: "Target: CFOs", reach: "Region: EU", eng: "Topic: Fintech", img: 1 },
-            { name: "AI Processing", handle: "Semantic Analysis", score: "98%", auth: "Context Aware", reach: "Multi-lingual", eng: "Real-time", img: 2 }
+            { name: "Dr. Elena Rostova", handle: "@FinTech_CFO", score: "98%", auth: "96%", reach: "245k", eng: "8.2%", img: 1 },
+            { name: "Marcus Weber", handle: "@EuroFinance", score: "94%", auth: "91%", reach: "180k", eng: "6.5%", img: 2 }
         ]
     },
-    match: {
-        title: "We Match",
-        results: "Ranked Creators by Campaign Fit, Authority & Relevance",
+    event: {
+        title: "Event Amplification",
+        results: "Campaign: 'AI Summit in London—target tech leaders'",
         cards: [
-            { name: "Dr. Elena Rostova", handle: "@FinTech_CFO", score: "98%", auth: "96%", reach: "245k", eng: "8.2%", img: 3 },
-            { name: "Marcus Weber", handle: "@EuroFinance", score: "94%", auth: "91%", reach: "180k", eng: "6.5%", img: 4 }
+            { name: "Sarah Chen", handle: "@AI_Summit_EU", score: "97%", auth: "94%", reach: "320k", eng: "7.8%", img: 3 },
+            { name: "Tech Events UK", handle: "@TechEventsUK", score: "93%", auth: "89%", reach: "450k", eng: "5.2%", img: 4 }
         ]
     },
-    interact: {
-        title: "You Interact",
-        results: "Like, Skip, or Activate—Every Signal Teaches the System",
+    content: {
+        title: "Content Distribution",
+        results: "Campaign: 'ESG whitepaper for sustainability officers'",
         cards: [
-            { name: "Forecasted Impact", handle: "Predictive Analytics", score: "95%", auth: "Est. Reach", reach: "425k", eng: "ROI: 3.2x", img: 5 },
-            { name: "Pricing Intelligence", handle: "Market Rate", score: "92%", auth: "$2.5k-$4k", reach: "Per Post", eng: "Fair Value", img: 6 }
+            { name: "Green Business", handle: "@GreenBiz_ESG", score: "96%", auth: "95%", reach: "180k", eng: "9.1%", img: 5 },
+            { name: "Sustainability Pro", handle: "@SustainPro", score: "92%", auth: "88%", reach: "210k", eng: "6.8%", img: 6 }
         ]
     },
-    adapt: {
-        title: "We Adapt",
-        results: "NYRA Updates Your Brand's Authority Graph in Real Time",
+    thought: {
+        title: "Thought Leadership",
+        results: "Campaign: 'Position CEO as Web3 authority'",
         cards: [
-            { name: "Learning Engine", handle: "Continuous Optimization", score: "99%", auth: "Pattern Recognition", reach: "Auto-tune", eng: "Smarter", img: 7 },
-            { name: "Better Results", handle: "Every Campaign", score: "97%", auth: "Compound Effect", reach: "Long-term", eng: "Growth", img: 8 }
+            { name: "Crypto Analyst", handle: "@Web3_Insights", score: "99%", auth: "98%", reach: "520k", eng: "8.9%", img: 7 },
+            { name: "Blockchain Today", handle: "@BlockchainNow", score: "95%", auth: "93%", reach: "380k", eng: "7.2%", img: 8 }
         ]
     }
 };
