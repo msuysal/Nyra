@@ -241,6 +241,8 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     threshold: 0.1
 });
 
+revealElements.forEach(el => revealObserver.observe(el));
+
 // Waitlist Modal Logic
 const modal = document.getElementById('waitlist-modal');
 const closeModalBtn = document.getElementById('close-modal');
