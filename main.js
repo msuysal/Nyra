@@ -199,7 +199,7 @@ if (industriesSection && industryCards.length > 0) {
         const end = sectionTop + sectionHeight - windowHeight;
 
         let progress = (scrollY - start) / (end - start);
-        progress = Math.max(0, Math.min(1, progress)); // Clamp 0 to 1
+        progress = Math.max(0, Math.min(0.6, progress)); // Clamp 0 to 0.6 (stop at 60%)
 
         industryCards.forEach((card) => {
             const angleDeg = parseFloat(card.getAttribute('data-angle'));
@@ -211,7 +211,7 @@ if (industriesSection && industryCards.length > 0) {
 
             // Current Expansion
             // Easing: start slow, explode out
-            const ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+            const ease = progress < 0.3 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
             const currentRadius = maxRadius * distanceMult * ease;
 
