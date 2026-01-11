@@ -46,6 +46,10 @@ body {
         radial-gradient(circle at 90% 70%, rgba(138, 43, 226, 0.04) 0%, transparent 20%);
 }
 
+main {
+    padding-top: 100px;
+}
+
 h1,
 h2,
 h3,
@@ -132,6 +136,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .btn-nav {
@@ -173,6 +178,17 @@ ul {
     display: flex;
     gap: 32px;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 1024px) {
+    .nav-links {
+        position: static;
+        transform: none;
+        gap: 20px;
+    }
 }
 
 .nav-links a {
