@@ -921,128 +921,227 @@ h1 {
     flex-direction: column;
 }
 
-.terminal-header {
-    height: 40px;
-    background: #111;
-    border-bottom: 1px solid var(--border-light);
-    display: flex;
-    align-items: center;
-    padding: 0 16px;
-}
-
-.dots {
-    display: flex;
-    gap: 6px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.red {
-    background: #FF5F56;
-}
-
-.yellow {
-    background: #FFBD2E;
-}
-
-.green {
-    background: #27C93F;
-}
-
-.terminal-title {
-    flex: 1;
-    text-align: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--text-muted);
-    opacity: 0.5;
-}
-
-.terminal-body {
-    padding: 40px;
-    font-family: 'JetBrains Mono', monospace;
-    flex: 1;
+/* Dashboard UI */
+.dashboard-ui {
+    background: #080808;
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 100%;
 }
 
-.command-line {
+.dash-top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+}
+
+.crumb-light {
+    color: var(--text-muted);
+}
+
+.crumb-active {
+    color: #fff;
+    font-weight: 500;
+}
+
+.crumb-sep {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.dash-filters {
     display: flex;
     gap: 12px;
     margin-bottom: 32px;
-    font-size: 16px;
+    flex-wrap: wrap;
 }
 
-.prompt {
-    color: var(--primary);
+.filter-pill {
+    padding: 6px 16px;
+    border-radius: 50px;
+    border: 1px solid var(--border-light);
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.02);
 }
 
-.command-text {
+.filter-pill:hover,
+.filter-pill.active {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: var(--primary);
     color: #fff;
 }
 
-.response-area {
+.dash-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dash-header-row h4 {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.sort-dropdown {
+    font-size: 12px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.dash-cards-container {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    opacity: 0;
-    animation: fadeIn 0.5s ease forwards 0.2s;
 }
 
-.output-label {
-    font-size: 12px;
-    color: var(--primary);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+.dash-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 20px;
+    transition: var(--transition);
+    animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-#console-output {
-    font-size: 24px;
+.dash-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--border-light);
+}
+
+.c1 {
+    background-image: url('https://i.pravatar.cc/150?u=1');
+}
+
+.c2 {
+    background-image: url('https://i.pravatar.cc/150?u=2');
+}
+
+.c3 {
+    background-image: url('https://i.pravatar.cc/150?u=3');
+}
+
+.card-meta {
+    flex: 1;
+}
+
+.card-meta .name {
+    font-size: 14px;
+    font-weight: 600;
     color: #fff;
-    line-height: 1.4;
-    max-width: 80%;
+    margin-bottom: 2px;
 }
 
-.loading-bar {
-    width: 200px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 2px;
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.bar-fill {
-    height: 100%;
-    width: 0%;
-    background: var(--primary);
-    animation: loadBar 2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-}
-
-.data-row {
-    font-size: 13px;
+.card-meta .handle {
+    font-size: 12px;
     color: var(--text-muted);
 }
 
-@keyframes loadBar {
-    0% {
-        width: 0%;
-        transform: translateX(-100%);
-    }
+.score-badge {
+    background: rgba(39, 201, 63, 0.1);
+    color: #27C93F;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(39, 201, 63, 0.2);
+}
 
-    50% {
-        width: 80%;
-    }
+.stat-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 16px;
+}
 
-    100% {
-        width: 100%;
-        transform: translateX(200%);
-    }
+.stat label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.stat .val {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 10px;
 }
 
 @keyframes fadeIn {

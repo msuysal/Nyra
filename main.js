@@ -8,51 +8,95 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Use Cases Console Interaction
-const useCasesData = {
+// Dashboard Interaction
+const dashboardData = {
     gtm: {
-        command: "Initializing GTM Protocol...",
-        output: "Identify key voices to amplify your Go-To-Market strategy."
+        title: "GTM Strategy",
+        results: "Strategy Experts (Top 1%)",
+        cards: [
+            { name: "Dr. Elena Rostova", handle: "@AI_Ethics_Lab", score: "98%", auth: "95%", reach: "245k", eng: "4.2%", img: 1 },
+            { name: "Marcus Chen", handle: "@TechVantage", score: "94%", auth: "88%", reach: "850k", eng: "2.8%", img: 2 }
+        ]
     },
     launch: {
-        command: "Scanning Product Reviewers...",
-        output: "Pinpoint technical critics for beta validation and launch reviews."
+        title: "Product Launch",
+        results: "Tech Reviewers (High Impact)",
+        cards: [
+            { name: "Sarah Jenkins", handle: "@Dev_Sarah", score: "96%", auth: "92%", reach: "120k", eng: "8.5%", img: 4 },
+            { name: "ReviewTechUSA", handle: "@ReviewTech", score: "91%", auth: "85%", reach: "1.2M", eng: "3.1%", img: 5 }
+        ]
     },
     thought: {
-        command: "Analyzing Narrative Gaps...",
-        output: "Find white space in the market to position your CEO as a thought leader."
+        title: "Thought Leadership",
+        results: "Industry Analysts & VCs",
+        cards: [
+            { name: "Jason Calacanis", handle: "@Jason", score: "99%", auth: "98%", reach: "750k", eng: "5.4%", img: 6 },
+            { name: "Li Jin", handle: "@ljin18", score: "95%", auth: "94%", reach: "300k", eng: "4.8%", img: 7 }
+        ]
     },
     reputation: {
-        command: "Monitoring Brand Sentiment...",
-        output: "Build trust by engaging with authoritative voices in your sector."
+        title: "Reputation",
+        results: "Policy Makers & NGOs",
+        cards: [
+            { name: "Global Climate", handle: "@Climate_Action", score: "97%", auth: "96%", reach: "2.1M", eng: "6.2%", img: 8 },
+            { name: "Policy Watch", handle: "@Policy_EU", score: "92%", auth: "90%", reach: "150k", eng: "3.5%", img: 9 }
+        ]
     }
 };
 
 const menuItems = document.querySelectorAll('.menu-item');
-const consoleCommand = document.getElementById('console-command');
-const consoleOutput = document.getElementById('console-output');
-const responseArea = document.querySelector('.response-area');
+const dashCampaign = document.getElementById('dash-campaign');
+const dashResultsTitle = document.getElementById('dash-results-title');
+const dashCardsContainer = document.getElementById('dash-cards');
 
 if (menuItems.length > 0) {
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
-            // Remove active class
+            // Active State
             menuItems.forEach(i => i.classList.remove('active'));
             item.classList.add('active');
 
-            // Get data
             const key = item.getAttribute('data-id');
-            const data = useCasesData[key];
+            const data = dashboardData[key];
 
             if (data) {
                 // Update Text
-                consoleCommand.innerText = data.command;
-                consoleOutput.innerText = data.output;
+                dashCampaign.innerText = data.title;
+                dashResultsTitle.innerText = data.results;
 
-                // Re-trigger Animation
-                responseArea.style.animation = 'none';
-                responseArea.offsetHeight; /* trigger reflow */
-                responseArea.style.animation = 'fadeIn 0.5s ease forwards 0.2s';
+                // Render Cards
+                dashCardsContainer.innerHTML = '';
+                data.cards.forEach((card, index) => {
+                    const cardHTML = `
+                        <div class="dash-card" style="animation-delay: ${index * 0.1}s">
+                            <div class="card-head">
+                                <div class="avatar-circle" style="background-image: url('https://i.pravatar.cc/150?u=${card.img}')"></div>
+                                <div class="card-meta">
+                                    <div class="name">${card.name}</div>
+                                    <div class="handle">${card.handle}</div>
+                                </div>
+                                <div class="score-badge">${card.score} Fit</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="stat-row">
+                                    <div class="stat">
+                                        <label>Authority</label>
+                                        <div class="progress"><div class="fill" style="width: ${card.auth}"></div></div>
+                                    </div>
+                                    <div class="stat">
+                                        <label>Reach</label>
+                                        <div class="val">${card.reach}</div>
+                                    </div>
+                                    <div class="stat">
+                                        <label>Eng.</label>
+                                        <div class="val">${card.eng}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    dashCardsContainer.insertAdjacentHTML('beforeend', cardHTML);
+                });
             }
         });
     });

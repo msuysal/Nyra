@@ -285,29 +285,94 @@
                         </div>
                     </div>
 
-                    <!-- Right: Terminal Display -->
-                    <div class="console-display">
-                        <div class="terminal-header">
-                            <div class="dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
+                    <!-- Right: Dashboard UI -->
+                    <div class="dashboard-ui">
+                        <div class="dash-top-nav">
+                            <div class="breadcrumbs">
+                                <span class="crumb-light">Campaigns</span>
+                                <span class="crumb-sep">/</span>
+                                <span class="crumb-light" id="dash-campaign">GTM Strategy</span>
+                                <span class="crumb-sep">/</span>
+                                <span class="crumb-active">Discover</span>
                             </div>
-                            <span class="terminal-title">nyra_intelligence_engine.exe</span>
+                            <div class="dash-user">
+                                <div class="user-avatar">OU</div>
+                            </div>
                         </div>
-                        <div class="terminal-body">
-                            <div class="command-line">
-                                <span class="prompt">></span>
-                                <span class="command-text" id="console-command">Initializing GTM Protocol...</span>
+
+                        <div class="dash-filters">
+                            <div class="filter-pill active">Fit Score: 80%+</div>
+                            <div class="filter-pill">Authority: High</div>
+                            <div class="filter-pill">Location: Global</div>
+                            <div class="filter-pill">Sentiment: Positive</div>
+                        </div>
+
+                        <div class="dash-content">
+                            <div class="dash-header-row">
+                                <h4 id="dash-results-title">Key Voices (Top 1%)</h4>
+                                <div class="sort-dropdown">Sort by: Relevance ▾</div>
                             </div>
-                            <div class="response-area">
-                                <span class="output-label">OBJECTIVE:</span>
-                                <p id="console-output">Identify key voices to amplify your Go-To-Market strategy.</p>
-                                <div class="loading-bar">
-                                    <div class="bar-fill"></div>
+
+                            <div class="dash-cards-container" id="dash-cards">
+                                <!-- Dynamic Cards Injected via JS or Default Static -->
+                                <div class="dash-card">
+                                    <div class="card-head">
+                                        <div class="avatar-circle c1"></div>
+                                        <div class="card-meta">
+                                            <div class="name">Dr. Elena Rostova</div>
+                                            <div class="handle">@AI_Ethics_Lab</div>
+                                        </div>
+                                        <div class="score-badge">98% Fit</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="stat-row">
+                                            <div class="stat">
+                                                <label>Authority</label>
+                                                <div class="progress">
+                                                    <div class="fill" style="width: 95%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stat">
+                                                <label>Reach</label>
+                                                <div class="val">245k</div>
+                                            </div>
+                                            <div class="stat">
+                                                <label>Eng.</label>
+                                                <div class="val">4.2%</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <span class="data-row">>> Analyzing 15,400 Nodes...</span>
-                                <span class="data-row">>> Authority Map Generated.</span>
+
+                                <div class="dash-card">
+                                    <div class="card-head">
+                                        <div class="avatar-circle c2"></div>
+                                        <div class="card-meta">
+                                            <div class="name">Marcus Chen</div>
+                                            <div class="handle">@TechVantage</div>
+                                        </div>
+                                        <div class="score-badge">94% Fit</div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="stat-row">
+                                            <div class="stat">
+                                                <label>Authority</label>
+                                                <div class="progress">
+                                                    <div class="fill" style="width: 88%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stat">
+                                                <label>Reach</label>
+                                                <div class="val">850k</div>
+                                            </div>
+                                            <div class="stat">
+                                                <label>Eng.</label>
+                                                <div class="val">2.8%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
