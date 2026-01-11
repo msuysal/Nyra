@@ -1357,35 +1357,32 @@ h1 {
 }
 
 .faq-layout {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 80px;
-    align-items: start;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .faq-header {
-    position: sticky;
-    top: 120px;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .display-faq {
-    font-size: clamp(80px, 10vw, 140px);
-    font-weight: 700;
-    line-height: 0.9;
-    margin-bottom: 32px;
-    background: linear-gradient(135deg, #fff 20%, var(--primary) 100%);
-    /* Matches Hero H1 */
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -4px;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -1px;
 }
 
 .faq-desc {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
     color: var(--text-muted);
-    max-width: 400px;
+    max-width: 600px;
+    margin: 0 auto;
     line-height: 1.6;
 }
 
@@ -1393,6 +1390,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
 }
 
 .faq-item {
