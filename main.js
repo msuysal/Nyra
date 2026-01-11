@@ -10,36 +10,36 @@ window.addEventListener('scroll', () => {
 
 // Dashboard Interaction
 const dashboardData = {
-    gtm: {
-        title: "GTM Strategy",
-        results: "Strategy Experts (Top 1%)",
+    prompt: {
+        title: "You Prompt",
+        results: "Example: 'KOLs in Fintech for CFOs in Europe'",
         cards: [
-            { name: "Dr. Elena Rostova", handle: "@AI_Ethics_Lab", score: "98%", auth: "95%", reach: "245k", eng: "4.2%", img: 1 },
-            { name: "Marcus Chen", handle: "@TechVantage", score: "94%", auth: "88%", reach: "850k", eng: "2.8%", img: 2 }
+            { name: "Campaign Input", handle: "Natural Language", score: "100%", auth: "Target: CFOs", reach: "Region: EU", eng: "Topic: Fintech", img: 1 },
+            { name: "AI Processing", handle: "Semantic Analysis", score: "98%", auth: "Context Aware", reach: "Multi-lingual", eng: "Real-time", img: 2 }
         ]
     },
-    launch: {
-        title: "Product Launch",
-        results: "Tech Reviewers (High Impact)",
+    match: {
+        title: "We Match",
+        results: "Ranked Creators by Campaign Fit, Authority & Relevance",
         cards: [
-            { name: "Sarah Jenkins", handle: "@Dev_Sarah", score: "96%", auth: "92%", reach: "120k", eng: "8.5%", img: 4 },
-            { name: "ReviewTechUSA", handle: "@ReviewTech", score: "91%", auth: "85%", reach: "1.2M", eng: "3.1%", img: 5 }
+            { name: "Dr. Elena Rostova", handle: "@FinTech_CFO", score: "98%", auth: "96%", reach: "245k", eng: "8.2%", img: 3 },
+            { name: "Marcus Weber", handle: "@EuroFinance", score: "94%", auth: "91%", reach: "180k", eng: "6.5%", img: 4 }
         ]
     },
-    thought: {
-        title: "Thought Leadership",
-        results: "Industry Analysts & VCs",
+    interact: {
+        title: "You Interact",
+        results: "Like, Skip, or Activate—Every Signal Teaches the System",
         cards: [
-            { name: "Jason Calacanis", handle: "@Jason", score: "99%", auth: "98%", reach: "750k", eng: "5.4%", img: 6 },
-            { name: "Li Jin", handle: "@ljin18", score: "95%", auth: "94%", reach: "300k", eng: "4.8%", img: 7 }
+            { name: "Forecasted Impact", handle: "Predictive Analytics", score: "95%", auth: "Est. Reach", reach: "425k", eng: "ROI: 3.2x", img: 5 },
+            { name: "Pricing Intelligence", handle: "Market Rate", score: "92%", auth: "$2.5k-$4k", reach: "Per Post", eng: "Fair Value", img: 6 }
         ]
     },
-    reputation: {
-        title: "Reputation",
-        results: "Policy Makers & NGOs",
+    adapt: {
+        title: "We Adapt",
+        results: "NYRA Updates Your Brand's Authority Graph in Real Time",
         cards: [
-            { name: "Global Climate", handle: "@Climate_Action", score: "97%", auth: "96%", reach: "2.1M", eng: "6.2%", img: 8 },
-            { name: "Policy Watch", handle: "@Policy_EU", score: "92%", auth: "90%", reach: "150k", eng: "3.5%", img: 9 }
+            { name: "Learning Engine", handle: "Continuous Optimization", score: "99%", auth: "Pattern Recognition", reach: "Auto-tune", eng: "Smarter", img: 7 },
+            { name: "Better Results", handle: "Every Campaign", score: "97%", auth: "Compound Effect", reach: "Long-term", eng: "Growth", img: 8 }
         ]
     }
 };
