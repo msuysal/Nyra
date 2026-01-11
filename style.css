@@ -40,8 +40,10 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     background-image:
-        radial-gradient(circle at 15% 50%, rgba(112, 0, 255, 0.05) 0%, transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.05) 0%, transparent 25%);
+        radial-gradient(circle at 15% 50%, rgba(112, 0, 255, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.06) 0%, transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(112, 0, 255, 0.06) 0%, transparent 35%),
+        radial-gradient(circle at 90% 70%, rgba(138, 43, 226, 0.04) 0%, transparent 20%);
 }
 
 h1,
@@ -101,7 +103,7 @@ ul {
 }
 
 .glass-dark {
-    background: rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(40, 0, 60, 0.3));
     backdrop-filter: blur(20px);
     border: 1px solid rgba(0, 229, 255, 0.1);
     border-radius: 32px;
@@ -460,7 +462,8 @@ ul {
     width: 250px;
     height: 250px;
     background: var(--secondary);
-    opacity: 0.12;
+    opacity: 0.15;
+    box-shadow: 0 0 100px rgba(112, 0, 255, 0.3);
 }
 
 .orb-3 {
