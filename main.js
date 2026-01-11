@@ -8,6 +8,56 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Use Cases Console Interaction
+const useCasesData = {
+    gtm: {
+        command: "Initializing GTM Protocol...",
+        output: "Identify key voices to amplify your Go-To-Market strategy."
+    },
+    launch: {
+        command: "Scanning Product Reviewers...",
+        output: "Pinpoint technical critics for beta validation and launch reviews."
+    },
+    thought: {
+        command: "Analyzing Narrative Gaps...",
+        output: "Find white space in the market to position your CEO as a thought leader."
+    },
+    reputation: {
+        command: "Monitoring Brand Sentiment...",
+        output: "Build trust by engaging with authoritative voices in your sector."
+    }
+};
+
+const menuItems = document.querySelectorAll('.menu-item');
+const consoleCommand = document.getElementById('console-command');
+const consoleOutput = document.getElementById('console-output');
+const responseArea = document.querySelector('.response-area');
+
+if (menuItems.length > 0) {
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active class
+            menuItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+
+            // Get data
+            const key = item.getAttribute('data-id');
+            const data = useCasesData[key];
+
+            if (data) {
+                // Update Text
+                consoleCommand.innerText = data.command;
+                consoleOutput.innerText = data.output;
+
+                // Re-trigger Animation
+                responseArea.style.animation = 'none';
+                responseArea.offsetHeight; /* trigger reflow */
+                responseArea.style.animation = 'fadeIn 0.5s ease forwards 0.2s';
+            }
+        });
+    });
+}
+
 // Smooth Scroll for Anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

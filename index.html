@@ -243,36 +243,73 @@
         </section>
 
 
-        <!-- POSITIONING & USE CASES -->
-        <section class="positioning" id="use-cases">
+        <!-- USE CASES CONSOLE -->
+        <section class="use-cases-interactive" id="use-cases">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header text-center">
+                    <span class="badge">Applications</span>
                     <h2>Built for Result-Driven B2B Teams</h2>
-                    <h3>NYRA helps companies where credibility, education, and trust are the core growth levers.</h3>
+                    <p class="lead">Credibility is the new currency. Here's how to spend it.</p>
                 </div>
-                <div class="grid col-2">
-                    <div class="benefits-content">
-                        <h4>How you can benefit from NYRA?</h4>
-                        <ul class="benefit-list">
-                            <li><span class="check">✔</span> GTM Strategy</li>
-                            <li><span class="check">✔</span> Product review & launch</li>
-                            <li><span class="check">✔</span> Technical thought leadership</li>
-                            <li><span class="check">✔</span> Market education</li>
-                            <li><span class="check">✔</span> Pre-event narrative amplification</li>
-                            <li><span class="check">✔</span> Reputation & trust-building</li>
-                        </ul>
+
+                <div class="console-wrapper glass-dark">
+                    <!-- Left: Menu -->
+                    <div class="console-menu">
+                        <div class="menu-item active" data-id="gtm">
+                            <span class="icon">➔</span>
+                            <div class="meta">
+                                <h3>GTM Strategy</h3>
+                                <p>Launch with precision.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item" data-id="launch">
+                            <span class="icon">➔</span>
+                            <div class="meta">
+                                <h3>Product Launch</h3>
+                                <p>Get technical validation.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item" data-id="thought">
+                            <span class="icon">➔</span>
+                            <div class="meta">
+                                <h3>Thought Leadership</h3>
+                                <p>Own the narrative.</p>
+                            </div>
+                        </div>
+                        <div class="menu-item" data-id="reputation">
+                            <span class="icon">➔</span>
+                            <div class="meta">
+                                <h3>Reputation</h3>
+                                <p>Build trust at scale.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="prompts-demo glass">
-                        <h4>Try these prompts in NYRA:</h4>
-                        <div class="prompt-box">
-                            <p class="prompt">“Find C-level LinkedIn influencers talking about AI regulation in London”
-                            </p>
+
+                    <!-- Right: Terminal Display -->
+                    <div class="console-display">
+                        <div class="terminal-header">
+                            <div class="dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">nyra_intelligence_engine.exe</span>
                         </div>
-                        <div class="prompt-box">
-                            <p class="prompt">“Find YouTubers who publish content on digital transformation in
-                                Birmingham”</p>
+                        <div class="terminal-body">
+                            <div class="command-line">
+                                <span class="prompt">></span>
+                                <span class="command-text" id="console-command">Initializing GTM Protocol...</span>
+                            </div>
+                            <div class="response-area">
+                                <span class="output-label">OBJECTIVE:</span>
+                                <p id="console-output">Identify key voices to amplify your Go-To-Market strategy.</p>
+                                <div class="loading-bar">
+                                    <div class="bar-fill"></div>
+                                </div>
+                                <span class="data-row">>> Analyzing 15,400 Nodes...</span>
+                                <span class="data-row">>> Authority Map Generated.</span>
+                            </div>
                         </div>
-                        <div class="demo-caption">Visualizing the path to authority in seconds.</div>
                     </div>
                 </div>
             </div>
