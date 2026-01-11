@@ -17,19 +17,79 @@
 
     <style>
         .article-hero {
-            padding: 180px 0 100px;
+            padding: 180px 0 80px;
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .article-content {
-            max-width: 800px;
+        /* Layout Grid */
+        .article-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 60px;
+            max-width: 1100px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .article-content {
             color: var(--text-muted);
             font-size: 18px;
             line-height: 1.8;
             padding-bottom: 50px;
+            min-width: 0;
+            /* Prevent overflow */
+        }
+
+        /* TOC Sidebar */
+        .toc-sidebar {
+            display: block;
+        }
+
+        .toc-wrapper {
+            position: sticky;
+            top: 120px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .toc-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .toc-data-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+            display: block;
+            border-left: 2px solid transparent;
+            padding-left: 12px;
+            margin-left: -12px;
+        }
+
+        .toc-data-link:hover,
+        .toc-data-link.active {
+            color: var(--primary);
+            border-left-color: var(--primary);
         }
 
         .article-content p {
@@ -40,6 +100,8 @@
             color: #fff;
             font-size: 28px;
             margin: 60px 0 24px;
+            scroll-margin-top: 100px;
+            /* Offset for sticky header/TOC */
         }
 
         .article-date {
@@ -66,17 +128,79 @@
             backdrop-filter: blur(10px);
             border: 1px solid var(--border-light);
             z-index: 100;
+            transition: all 0.3s ease;
         }
 
         .back-link:hover {
             color: #fff;
             border-color: var(--primary);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Scroll To Top */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.3);
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-top-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 229, 255, 0.5);
+        }
+
+        @media (max-width: 900px) {
+            .article-layout {
+                grid-template-columns: 1fr;
+                display: block;
+            }
+
+            .toc-sidebar {
+                display: none;
+                /* Hide TOC on mobile for simplicity */
+            }
         }
 
         @media (max-width: 768px) {
             .back-link {
                 top: 20px;
                 left: 20px;
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+
+            .article-hero {
+                padding: 140px 20px 60px;
+            }
+
+            .scroll-top-btn {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
             }
         }
     </style>
@@ -84,11 +208,6 @@
 
 <body>
     <a href="/" class="back-link">&larr; Back to NYRA</a>
-
-    <!-- Simplified Nav for inner page -->
-    <header class="navbar" style="position:absolute; background:transparent;">
-        <!-- Usually hidden or minimal on blog post to focus on reading, or keep standard nav -->
-    </header>
 
     <main>
         <article>
@@ -99,43 +218,65 @@
                     influence without vanity metrics.</p>
             </div>
 
-            <div class="container article-content">
-                <p>In the B2B world, influence isn't about how many followers you have. It's about <strong>who</strong>
-                    listens to you when you speak. For too long, marketing teams have been forced to rely on
-                    consumer-grade metrics—likes, shares, and follower counts—to make enterprise-grade decisions.</p>
+            <div class="container article-layout">
+                <!-- TOC Sidebar -->
+                <aside class="toc-sidebar">
+                    <nav class="toc-wrapper">
+                        <div class="toc-title">Table of Contents</div>
+                        <ul class="toc-list">
+                            <li><a href="#beyond" class="toc-data-link">Beyond Follower Count</a></li>
+                            <li><a href="#how" class="toc-data-link">How It Works</a></li>
+                            <li><a href="#what" class="toc-data-link">What This Means</a></li>
+                        </ul>
+                    </nav>
+                </aside>
 
-                <p>Today, we're changing that.</p>
+                <div class="article-content">
+                    <p>In the B2B world, influence isn't about how many followers you have. It's about
+                        <strong>who</strong>
+                        listens to you when you speak. For too long, marketing teams have been forced to rely on
+                        consumer-grade metrics—likes, shares, and follower counts—to make enterprise-grade decisions.
+                    </p>
 
-                <h2>Beyond the Follower Count</h2>
-                <p>The Authority Graph™ 2.0 is designed to answer one question: <em>Does this person shape the decisions
-                        of my target buyer?</em></p>
+                    <p>Today, we're changing that.</p>
 
-                <p>We built a new semantic engine that analyzes:</p>
-                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 30px;">
-                    <li><strong>Contextual Relevance:</strong> Not just "Does he talk about Tech?", but "Does he
-                        influence the Enterprise Security purchasing committee?"</li>
-                    <li><strong>Network Density:</strong> Who interacts with them? Are they other experts, or just bots?
-                    </li>
-                    <li><strong>Sentiment Quality:</strong> Are people agreeing with them, or arguing?</li>
-                </ul>
+                    <h2 id="beyond">Beyond the Follower Count</h2>
+                    <p>The Authority Graph™ 2.0 is designed to answer one question: <em>Does this person shape the
+                            decisions
+                            of my target buyer?</em></p>
 
-                <h2>How It Works</h2>
-                <p>Using a combination of LLMs and graph theory, we map the relationships between millions of B2B
-                    professionals. When you search for "Fintech in London," we don't just look for keywords. We look for
-                    the central nodes in that specific trust network.</p>
+                    <p>We built a new semantic engine that analyzes:</p>
+                    <ul style="list-style: disc; margin-left: 20px; margin-bottom: 30px;">
+                        <li><strong>Contextual Relevance:</strong> Not just "Does he talk about Tech?", but "Does he
+                            influence the Enterprise Security purchasing committee?"</li>
+                        <li><strong>Network Density:</strong> Who interacts with them? Are they other experts, or just
+                            bots?
+                        </li>
+                        <li><strong>Sentiment Quality:</strong> Are people agreeing with them, or arguing?</li>
+                    </ul>
 
-                <div class="glass" style="padding: 40px; margin: 40px 0; text-align: center; border-radius: 20px;">
-                    <img src="/assets/feat-authority.png" alt="Graph Vis" style="max-width: 100%; border-radius: 12px;">
-                    <p style="font-size: 14px; margin-top: 10px; margin-bottom: 0;">Figure 1: The Authority Graph allows
-                        you to visualize cluster density.</p>
+                    <h2 id="how">How It Works</h2>
+                    <p>Using a combination of LLMs and graph theory, we map the relationships between millions of B2B
+                        professionals. When you search for "Fintech in London," we don't just look for keywords. We look
+                        for
+                        the central nodes in that specific trust network.</p>
+
+                    <div class="glass" style="padding: 40px; margin: 40px 0; text-align: center; border-radius: 20px;">
+                        <img src="/assets/feat-authority.png" alt="Graph Vis"
+                            style="max-width: 100%; border-radius: 12px; width: 100%; height: auto;">
+                        <p style="font-size: 14px; margin-top: 10px; margin-bottom: 0;">Figure 1: The Authority Graph
+                            allows
+                            you to visualize cluster density.</p>
+                    </div>
+
+                    <h2 id="what">What This Means for You</h2>
+                    <p>For our beta partners, this has meant a <strong>3x increase</strong> in campaign ROI. By
+                        reallocating
+                        budget from "broad reach" influencers to "high authority" niche experts, they reached fewer
+                        people—but closed more deals.</p>
+
+                    <p>The Authority Graph™ 2.0 is available starting today for all Enterprise customers.</p>
                 </div>
-
-                <h2>What This Means for You</h2>
-                <p>For our beta partners, this has meant a <strong>3x increase</strong> in campaign ROI. By reallocating
-                    budget from "broad reach" influencers to "high authority" niche experts, they reached fewer
-                    people—but closed more deals.</p>
-
-                <p>The Authority Graph™ 2.0 is available starting today for all Enterprise customers.</p>
             </div>
 
             <!-- CTA -->
@@ -155,6 +296,70 @@
             &copy; 2026 NYRA Intelligence.
         </div>
     </footer>
+
+    <!-- Scroll Top Button -->
+    <button id="scrollTop" class="scroll-top-btn" aria-label="Scroll to top">&uarr;</button>
+
+    <script>
+        // Scroll to Top Logic
+        const scrollBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+
+            // Highlight TOC logic (simple intersection check could be here, or just active link)
+            // For now, let's keep it simple with click-to-nav, sticky handles the rest visually.
+            // But we can add active state on scroll:
+
+            const sections = document.querySelectorAll('h2[id]');
+            const navLi = document.querySelectorAll('.toc-data-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current) && current !== '') {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc-data-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 120, // Offset for sticky TOC/header
+                        behavior: 'smooth'
+                    });
+
+                    // Update URL hash without jumping
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
