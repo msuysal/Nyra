@@ -75,31 +75,6 @@
             /* Dark mode map effect */
         }
 
-        .back-link {
-            position: fixed;
-            top: 40px;
-            left: 40px;
-            color: var(--text-muted);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Space Grotesk', sans-serif;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-light);
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: #fff;
-            border-color: var(--primary);
-            background: rgba(0, 0, 0, 0.8);
-        }
-
         @media (max-width: 900px) {
             .contact-layout {
                 grid-template-columns: 1fr;
@@ -109,7 +84,22 @@
 </head>
 
 <body>
-    <a href="/" class="back-link">&larr; Back to NYRA</a>
+    <header class="navbar">
+        <div class="container">
+            <a href="/" class="logo" style="text-decoration: none;">
+                <span class="logo-text">NYRA</span>
+                <span class="logo-tagline">Influencer Intelligence</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/#solutions">Solutions</a>
+                <a href="/#industries">Industries</a>
+                <a href="/#use-cases">Use Cases</a>
+                <a href="/#faq">FAQ</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+            <a href="/#signup" class="btn btn-primary btn-nav">Join Waitlist</a>
+        </div>
+    </header>
 
     <main>
         <section class="container contact-hero">
@@ -191,8 +181,56 @@
     </main>
 
     <footer class="footer-modern">
-        <div class="container" style="text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 14px;">
-            &copy; 2026 NYRA Intelligence.
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">NYRA</span>
+                        <span class="logo-tagline">Influencer Intelligence</span>
+                    </div>
+                    <p class="brand-desc">The authority mapping engine for the B2B era. Predict impact, not just views.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="footer-social-btn">Li</a>
+                        <a href="#" class="footer-social-btn">X</a>
+                        <a href="#" class="footer-social-btn">In</a>
+                    </div>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Product</h4>
+                        <a href="/#solutions">Features</a>
+                        <a href="/#industries">Industries</a>
+                        <a href="#">Authority Graph</a>
+                        <a href="#">API Access</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="mailto:olgu@usenyra.com">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Stay Ahead</h4>
+                    <p>Join our newsletter for the latest B2B influence insights.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit" class="btn-icon">&rarr;</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NYRA Intelligence. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
