@@ -187,6 +187,112 @@ ul {
     text-shadow: 0 0 10px var(--primary-glow);
 }
 
+/* Mega Menu */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-link-with-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 32px;
+    min-width: 600px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.nav-item-dropdown:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 10px;
+}
+
+.mega-menu-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.mega-menu-section h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.mega-menu-item {
+    display: block;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    transition: var(--transition);
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.mega-menu-item:hover {
+    background: rgba(0, 240, 255, 0.05);
+    border-color: var(--border-light);
+    transform: translateX(4px);
+}
+
+.mega-menu-item strong {
+    display: block;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.mega-menu-item p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 4px 8px;
+    background: rgba(255, 200, 0, 0.1);
+    color: #ffc800;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .nav-social-icon {
     display: flex;
     align-items: center;
