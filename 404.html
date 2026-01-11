@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | NYRA Intelligence</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .error-code {
+            font-size: clamp(100px, 20vw, 200px);
+            font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+
+        .error-msg {
+            font-size: 24px;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            max-width: 500px;
+        }
+
+        .glitch-wrapper {
+            position: relative;
+        }
+
+        /* Simple glow element */
+        .glow-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: -1;
+            filter: blur(80px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <div class="glitch-wrapper">
+        <div class="error-code">404</div>
+    </div>
+
+    <h2>Signal Lost</h2>
+    <p class="error-msg">The intelligence node you are looking for has been disconnected or does not exist.</p>
+
+    <a href="/" class="btn btn-primary">Reconnect to Main Feed</a>
+
+</body>
+
+</html>
