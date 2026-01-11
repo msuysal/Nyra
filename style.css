@@ -205,6 +205,42 @@ ul {
     text-shadow: 0 0 10px var(--primary-glow);
 }
 
+/* Breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.breadcrumbs a {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary);
+}
+
+.breadcrumbs span.separator {
+    font-size: 10px;
+    color: var(--text-muted);
+    opacity: 0.3;
+}
+
+.breadcrumbs .current {
+    font-size: 11px;
+    color: var(--text-muted);
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Mega Menu */
 .nav-item-dropdown {
     position: relative;
