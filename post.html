@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYRA | Introducing Authority Graph 2.0</title>
+    <meta name="description" content="A deep dive into our new semantic engine.">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .article-hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 18px;
+            line-height: 1.8;
+            padding-bottom: 50px;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content h2 {
+            color: #fff;
+            font-size: 28px;
+            margin: 60px 0 24px;
+        }
+
+        .article-date {
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .back-link {
+                top: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/" class="back-link">&larr; Back to NYRA</a>
+
+    <!-- Simplified Nav for inner page -->
+    <header class="navbar" style="position:absolute; background:transparent;">
+        <!-- Usually hidden or minimal on blog post to focus on reading, or keep standard nav -->
+    </header>
+
+    <main>
+        <article>
+            <div class="container article-hero">
+                <span class="article-date">PRODUCT UPDATE • OCT 12, 2025</span>
+                <h1>Introducing the <span class="text-highlight">Authority Graph™ 2.0</span></h1>
+                <p class="lead" style="max-width: 100%;">The first semantic engine capable of measuring true B2B
+                    influence without vanity metrics.</p>
+            </div>
+
+            <div class="container article-content">
+                <p>In the B2B world, influence isn't about how many followers you have. It's about <strong>who</strong>
+                    listens to you when you speak. For too long, marketing teams have been forced to rely on
+                    consumer-grade metrics—likes, shares, and follower counts—to make enterprise-grade decisions.</p>
+
+                <p>Today, we're changing that.</p>
+
+                <h2>Beyond the Follower Count</h2>
+                <p>The Authority Graph™ 2.0 is designed to answer one question: <em>Does this person shape the decisions
+                        of my target buyer?</em></p>
+
+                <p>We built a new semantic engine that analyzes:</p>
+                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 30px;">
+                    <li><strong>Contextual Relevance:</strong> Not just "Does he talk about Tech?", but "Does he
+                        influence the Enterprise Security purchasing committee?"</li>
+                    <li><strong>Network Density:</strong> Who interacts with them? Are they other experts, or just bots?
+                    </li>
+                    <li><strong>Sentiment Quality:</strong> Are people agreeing with them, or arguing?</li>
+                </ul>
+
+                <h2>How It Works</h2>
+                <p>Using a combination of LLMs and graph theory, we map the relationships between millions of B2B
+                    professionals. When you search for "Fintech in London," we don't just look for keywords. We look for
+                    the central nodes in that specific trust network.</p>
+
+                <div class="glass" style="padding: 40px; margin: 40px 0; text-align: center; border-radius: 20px;">
+                    <img src="/assets/feat-authority.png" alt="Graph Vis" style="max-width: 100%; border-radius: 12px;">
+                    <p style="font-size: 14px; margin-top: 10px; margin-bottom: 0;">Figure 1: The Authority Graph allows
+                        you to visualize cluster density.</p>
+                </div>
+
+                <h2>What This Means for You</h2>
+                <p>For our beta partners, this has meant a <strong>3x increase</strong> in campaign ROI. By reallocating
+                    budget from "broad reach" influencers to "high authority" niche experts, they reached fewer
+                    people—but closed more deals.</p>
+
+                <p>The Authority Graph™ 2.0 is available starting today for all Enterprise customers.</p>
+            </div>
+
+            <!-- CTA -->
+            <section class="final-cta" style="border-top: 1px solid var(--border-light);">
+                <div class="container glass-gradient">
+                    <div class="final-content">
+                        <h2>Ready to map your market?</h2>
+                        <a href="/" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container" style="text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 14px;">
+            &copy; 2026 NYRA Intelligence.
+        </div>
+    </footer>
+</body>
+
+</html>
