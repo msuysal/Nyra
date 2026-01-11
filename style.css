@@ -214,16 +214,16 @@ ul {
     left: 50%;
     transform: translateX(-50%);
     margin-top: 20px;
-    background: rgba(10, 10, 15, 0.98);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--border-light);
-    border-radius: 16px;
-    padding: 32px;
-    min-width: 600px;
+    background: rgba(5, 5, 10, 0.98);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    min-width: 650px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 240, 255, 0.05);
     z-index: 1000;
 }
 
@@ -236,61 +236,76 @@ ul {
 .mega-menu-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 48px;
+}
+
+.mega-menu-section {
+    display: flex;
+    flex-direction: column;
 }
 
 .mega-menu-section h4 {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 11px;
+    font-weight: 700;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
     font-family: 'JetBrains Mono', monospace;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
 }
 
 .mega-menu-item {
-    display: block;
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 8px;
-    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    padding: 18px 20px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     border: 1px solid transparent;
     position: relative;
+    background: rgba(255, 255, 255, 0.01);
 }
 
 .mega-menu-item:hover {
-    background: rgba(0, 240, 255, 0.05);
-    border-color: var(--border-light);
-    transform: translateX(4px);
+    background: rgba(0, 240, 255, 0.08);
+    border-color: rgba(0, 240, 255, 0.2);
+    transform: translateX(6px);
+    box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1);
 }
 
 .mega-menu-item strong {
-    display: block;
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
     color: #fff;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .mega-menu-item p {
     font-size: 13px;
     color: var(--text-muted);
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0;
+    font-weight: 400;
 }
 
 .coming-soon-badge {
     display: inline-block;
-    font-size: 10px;
-    padding: 4px 8px;
-    background: rgba(255, 200, 0, 0.1);
+    font-size: 9px;
+    padding: 5px 10px;
+    background: linear-gradient(135deg, rgba(255, 200, 0, 0.15), rgba(255, 200, 0, 0.05));
     color: #ffc800;
-    border-radius: 4px;
-    margin-left: 8px;
-    font-weight: 600;
+    border-radius: 6px;
+    margin-left: 10px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
+    border: 1px solid rgba(255, 200, 0, 0.2);
 }
 
 .nav-social-icon {
