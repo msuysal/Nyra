@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYRA | Contact Us</title>
+    <meta name="description" content="Get in touch with the NYRA team.">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .contact-hero {
+            padding: 180px 0 60px;
+            text-align: center;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto 100px;
+        }
+
+        .contact-info {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .contact-info h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .contact-detail {
+            margin-bottom: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .form-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            margin-top: 40px;
+            filter: grayscale(100%) invert(90%);
+            /* Dark mode map effect */
+        }
+
+        .back-link {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Space Grotesk', sans-serif;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            border-color: var(--primary);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        @media (max-width: 900px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/" class="back-link">&larr; Back to NYRA</a>
+
+    <main>
+        <section class="container contact-hero">
+            <h1>Get in <span class="text-highlight">Touch</span></h1>
+            <p class="lead">Ready to start predicting influence? We're here to help.</p>
+        </section>
+
+        <div class="container contact-layout">
+            <!-- Contact Info & Map -->
+            <div class="contact-info">
+                <h3>Our Headquarters</h3>
+                <div class="contact-detail">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <div>
+                        <p style="color: #fff; margin-bottom: 8px;">Istanbul Office</p>
+                        <p>Esentepe Talatpaşa Caddesi No:5<br>Harman Sok. Girişi, 34394<br>Şişli/İstanbul</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    <div>
+                        <p style="color: #fff; margin-bottom: 8px;">Email Us</p>
+                        <a href="mailto:hello@nyra.ai"
+                            style="color: var(--primary); text-decoration: none;">hello@nyra.ai</a>
+                    </div>
+                </div>
+
+                <!-- Google Maps Embed Placeholder (since I don't have an API key, I'll use a static link or generic iframe if possible, or just a visual block) -->
+                <!-- Using a simple iframe with the address query -->
+                <div class="map-container">
+                    <iframe width="100%" height="100%" frameborder="0" style="border:0"
+                        src="https://www.google.com/maps?q=Esentepe+Talatpaşa+Caddesi+No:5+Harman+Sok.+Girişi,+34394+Şişli/İstanbul&output=embed">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="form-card">
+                <form id="contact-page-form" onsubmit="event.preventDefault(); alert('Message sent!');">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label
+                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Name</label>
+                        <input type="text"
+                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
+                            required placeholder="Your Name">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label
+                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Email</label>
+                        <input type="email"
+                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
+                            required placeholder="work@email.com">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label
+                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Message</label>
+                        <textarea rows="4"
+                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
+                            required placeholder="How can we help?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container" style="text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 14px;">
+            &copy; 2026 NYRA Intelligence.
+        </div>
+    </footer>
+</body>
+
+</html>
