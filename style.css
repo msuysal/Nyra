@@ -1239,6 +1239,14 @@ h1 {
     text-align: center;
 }
 
+.final-content h2 {
+    margin-bottom: 32px;
+}
+
+.final-content .btn {
+    margin-top: 16px;
+}
+
 .cta-group {
     display: flex;
     justify-content: center;
