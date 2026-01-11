@@ -241,4 +241,78 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     threshold: 0.1
 });
 
-revealElements.forEach(el => revealObserver.observe(el));
+// Waitlist Modal Logic
+const modal = document.getElementById('waitlist-modal');
+const closeModalBtn = document.getElementById('close-modal');
+const waitlistForm = document.getElementById('waitlist-form');
+const triggers = document.querySelectorAll('a[href="#signup"], .btn-primary:not(.btn-submit)');
+// Using selectors conservatively. 
+// Note: Some buttons might naturally point to #signup.
+
+if (modal && triggers.length > 0) {
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            // Check if it's actually meant to be a waitlist trigger
+            // For now, let's assume all main CTAs open the modal
+            // Exception: The subscribe button in final CTA is not strictly waitlist, but let's funnel them.
+
+            const isDownload = trigger.textContent.includes('Download');
+            const isSubscribe = trigger.textContent.includes('Subscribe');
+
+            if (trigger.getAttribute('href') === '#signup' || trigger.textContent.includes('Waitlist') || trigger.textContent.includes('Early Access')) {
+                e.preventDefault();
+                openModal();
+            }
+        });
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    // Form Submit
+    if (waitlistForm) {
+        waitlistForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate API call
+            const btn = waitlistForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+
+            btn.textContent = 'Securing Spot...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                alert("You're on the list! We'll be in touch shortly.");
+                closeModal();
+                waitlistForm.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+    }
+}
+
+function openModal() {
+    modal.style.display = 'flex';
+    // Small delay to allow display flex to apply before opacity transition
+    setTimeout(() => {
+        modal.classList.add('open');
+    }, 10);
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeModal() {
+    modal.classList.remove('open');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 300); // Match transition duration
+}
