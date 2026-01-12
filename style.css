@@ -322,6 +322,20 @@ ul {
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-muted);
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.nav-link-with-dropdown:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-glow);
 }
 
 .dropdown-arrow {
