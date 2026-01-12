@@ -3110,3 +3110,54 @@ select:focus {
         padding: 140px 0 80px;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/* MASTER USE CASES PAGE STYLES */
+/* -------------------------------------------------------------------------- */
+
+.use-case-master-card {
+    transition: var(--transition);
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+}
+
+.use-case-master-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.use-case-icon {
+    font-size: 32px;
+    width: 64px;
+    height: 64px;
+    background: rgba(0, 240, 255, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.implementation-box {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+}
+
+.implementation-box label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.implementation-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
