@@ -4,6 +4,7 @@ import os
 files_to_update = [
     'index.html', 'use-cases.html', 'careers.html', 'contact.html',
     'api.html', 'insights.html', 'privacy.html', '404.html',
+    'post.html',
     'solutions/awareness-reach.html',
     'solutions/product-review.html',
     'solutions/sales-partnership.html',
