@@ -3260,7 +3260,7 @@ select:focus {
 /* Re-designed Floating Header - Sprout Social Inspired */
 
 /* Floating Container */
-/* Full Width Header Container */
+/* Full Width Header Container - Hanging Panel Style */
 .fixed-header-wrapper {
     position: fixed;
     top: 0;
@@ -3270,31 +3270,26 @@ select:focus {
     display: flex;
     justify-content: center;
     padding: 0;
-    /* Full width */
-    pointer-events: auto;
-    /* Allow clicks since it spans full top */
-    background: #ffffff;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-    /* Subtle border-bottom feel */
+    pointer-events: none;
+    /* Allow clicks to pass through transparent areas */
+    background: transparent;
 }
 
 .nav-pill {
     pointer-events: auto;
     background: #ffffff;
-    width: 100%;
-    max-width: 1300px;
-    /* Keep content contained max width */
-    /* Removed border-radius and top/side spacing */
-    border-radius: 0;
-    box-shadow: none;
-    /* Shadow handled by wrapper or simplified */
+    width: calc(100% - 48px);
+    /* Leave space on left and right */
+    max-width: 1400px;
+    border-radius: 0 0 24px 24px;
+    /* Round ONLY bottom corners */
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
+    padding: 0 32px;
     transition: all 0.3s ease;
     height: 80px;
-    /* Slightly taller for full top nav feel */
 }
 
 /* Light Mode Overrides for Header Context */
