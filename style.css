@@ -255,6 +255,27 @@ ul {
     text-shadow: 0 0 10px var(--primary-glow);
 }
 
+.nav-link-login {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-muted);
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+    margin-right: 8px;
+}
+
+.nav-link-login:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 /* Breadcrumbs */
 .breadcrumbs {
     display: flex;
