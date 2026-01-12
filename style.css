@@ -3277,7 +3277,7 @@ select:focus {
 
 .nav-pill {
     pointer-events: auto;
-    background: #ffffff;
+    background: #f9f9f9;
     width: calc(100% - 48px);
     /* Leave space on left and right */
     max-width: 1400px;
@@ -3419,7 +3419,7 @@ select:focus {
     /* Need to override the dark styles if attached to the new header */
     top: 60px;
     /* Offset from link */
-    background: #ffffff;
+    background: #f9f9f9;
     border: 1px solid #e2e8f0;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     color: #0f172a;
@@ -3486,7 +3486,7 @@ select:focus {
 
 .mega-menu-footer {
     border-top: 1px solid #e2e8f0;
-    background: #ffffff;
+    background: #f9f9f9;
 }
 
 .footer-action {
