@@ -1,104 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYRA | Contact Us</title>
-    <meta name="description" content="Get in touch with the NYRA team.">
+import os
+import re
 
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+files_to_update = [
+    'index.html', 'use-cases.html', 'careers.html', 'contact.html',
+    'api.html', 'insights.html', 'privacy.html', '404.html',
+    'post.html',
+    'solutions/awareness-reach.html',
+    'solutions/product-review.html',
+    'solutions/sales-partnership.html',
+    'solutions/thought-leadership.html',
+    'solutions/technical-trust.html',
+    'solutions/market-education.html',
+    'solutions/whitepaper-collab.html',
+    'solutions/reputation-trust.html',
+    'solutions/brand-affinity.html',
+    'solutions/event-amplification.html'
+]
 
-    <style>
-        .contact-hero {
-            padding: 180px 0 60px;
-            text-align: center;
-        }
-
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1100px;
-            margin: 0 auto 100px;
-        }
-
-        .contact-info {
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .contact-info h3 {
-            color: #fff;
-            font-size: 24px;
-            margin-bottom: 24px;
-        }
-
-        .contact-detail {
-            margin-bottom: 32px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            color: var(--primary);
-            flex-shrink: 0;
-            margin-top: 4px;
-        }
-
-        .form-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-light);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(20px);
-        }
-
-        .map-container {
-            width: 100%;
-            height: 300px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-light);
-            margin-top: 40px;
-            filter: grayscale(100%) invert(90%);
-            /* Dark mode map effect */
-        }
-
-        .contact-hero {
-            padding: 140px 0 60px;
-            text-align: center;
-        }
-
-        .contact-hero h1 {
-            font-size: clamp(40px, 8vw, 64px);
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 900px) {
-            .contact-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-hero {
-                padding: 120px 0 40px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-        <header class="navbar">
+gold_header = """    <header class="navbar">
         <div class="container">
             <a href="/index.html" class="logo" style="text-decoration: none;">
                 <span class="logo-text">NYRA</span>
@@ -313,157 +233,34 @@
                 </button>
             </div>
         </div>
-    </header>
+    </header>"""
 
-    <main>
-        <section class="container contact-hero">
-            <nav class="breadcrumbs" style="justify-content: center;">
-                <a href="/index.html">Home</a>
-                <span class="separator">/</span>
-                <span class="current">Contact</span>
-            </nav>
-            <h1>Get in <span class="text-highlight">Touch</span></h1>
-            <p class="lead">Ready to start predicting influence? We're here to help.</p>
-        </section>
+base_dir = '/Users/olguuysal/.gemini/antigravity/scratch/nyra-landing-page'
 
-        <div class="container contact-layout">
-            <!-- Contact Info & Map -->
-            <div class="contact-info">
-                <h3>Our Headquarters</h3>
-                <div class="contact-detail">
-                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                        </path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                    <div>
-                        <p style="color: #fff; margin-bottom: 8px;">Istanbul Office</p>
-                        <p>Esentepe Talatpaşa Caddesi No:5<br>Harman Sok. Girişi, 34394<br>Şişli/İstanbul</p>
-                    </div>
-                </div>
+# Regex to find header
+header_pattern = re.compile(r'<header class="navbar">.*?</header>', re.DOTALL)
 
-                <div class="contact-detail">
-                    <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                        </path>
-                    </svg>
-                    <div>
-                        <p style="color: #fff; margin-bottom: 8px;">Email Us</p>
-                        <a href="mailto:olgu@usenyra.com"
-                            style="color: var(--primary); text-decoration: none;">olgu@usenyra.com</a>
-                    </div>
-                </div>
-
-                <!-- Google Maps Embed Placeholder (since I don't have an API key, I'll use a static link or generic iframe if possible, or just a visual block) -->
-                <!-- Using a simple iframe with the address query -->
-                <div class="map-container">
-                    <iframe width="100%" height="100%" frameborder="0" style="border:0"
-                        src="https://www.google.com/maps?q=Esentepe+Talatpaşa+Caddesi+No:5+Harman+Sok.+Girişi,+34394+Şişli/İstanbul&output=embed">
-                    </iframe>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="form-card">
-                <form id="contact-page-form" onsubmit="event.preventDefault(); alert('Message sent!');">
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label
-                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Name</label>
-                        <input type="text"
-                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
-                            required placeholder="Your Name">
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label
-                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Email</label>
-                        <input type="email"
-                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
-                            required placeholder="work@email.com">
-                    </div>
-
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label
-                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Message</label>
-                        <textarea rows="4"
-                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
-                            required placeholder="How can we help?"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Send Message</button>
-                </form>
-            </div>
-        </div>
-        <!-- PRE-FOOTER REVEAL -->
-        <section class="pre-footer-reveal">
-            <div class="container quote-container">
-                <div class="quote-reveal-card">
-                    <h2>Connect with the power of <span class="text-highlight">Authority</span></h2>
-                    <div class="cta-reveal-group">
-                        <a href="mailto:olgu@usenyra.com" class="btn btn-primary btn-large">Direct Email &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer-modern">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-text">NYRA</span>
-                        <span class="logo-tagline">Influence Intelligence</span>
-                    </div>
-                    <p class="brand-desc">The influence intelligence layer for B2B. Map authority, forecast impact, and
-                        activate the voices that move your market.</p>
-                    <div class="social-links">
-                        <a href="#" class="footer-social-btn">Li</a>
-                        <a href="#" class="footer-social-btn">X</a>
-                        <a href="#" class="footer-social-btn">In</a>
-                    </div>
-                </div>
-
-                <div class="footer-nav">
-                    <div class="nav-col">
-                        <h4>Product</h4>
-                        <a href="/index.html#solutions">Features</a>
-                        <a href="/use-cases.html">Use Cases</a>
-                        <a href="/api.html">API Access</a>
-                    </div>
-                    <div class="nav-col">
-                        <h4>Company</h4>
-                        <a href="#">About Us</a>
-                        <a href="/careers.html">Careers</a>
-                        <a href="#">Blog</a>
-                        <a href="mailto:olgu@usenyra.com">Contact</a>
-                    </div>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h4>Stay Ahead</h4>
-                    <p>Join our newsletter for the latest B2B influence insights.</p>
-                    <form class="newsletter-form" onsubmit="event.preventDefault();">
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit" class="btn-icon">&rarr;</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 NYRA Intelligence. All rights reserved.</p>
-                <div class="legal-links">
-                    <a href="/privacy.html">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module" src="./main.js"></script>
-</body>
-
-</html>
+for file_name in files_to_update:
+    path = os.path.join(base_dir, file_name)
+    if not os.path.exists(path):
+        print(f"Skipping {file_name}")
+        continue
+        
+    try:
+        with open(path, 'r') as f:
+            content = f.read()
+            
+        if header_pattern.search(content):
+            new_content = header_pattern.sub(gold_header, content)
+            
+            # Double check: if use-cases page has 'class="active"', we might want to preserve it,
+            # but simpler to just standardize for now as dropdowns don't show active state usually.
+            
+            with open(path, 'w') as f:
+                f.write(new_content)
+            print(f"Deployed header to {file_name}")
+        else:
+            print(f"No header found in {file_name}")
+            
+    except Exception as e:
+        print(f"Error processing {file_name}: {e}")
