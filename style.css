@@ -3255,4 +3255,277 @@ select:focus {
     font-size: 12px;
     color: var(--text-muted);
     pointer-events: none;
+}/* Re-designed Floating Header - Sprout Social Inspired */
+
+/* Floating Container */
+.fixed-header-wrapper {
+    position: fixed;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+    /* Safety padding for small screens */
+    pointer-events: none;
+    /* Let clicks pass through outside the pill */
 }
+
+.nav-pill {
+    pointer-events: auto;
+    background: #ffffff;
+    width: 100%;
+    max-width: 1300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    height: 72px;
+    /* Fixed elegant height */
+}
+
+/* Light Mode Overrides for Header Context */
+.nav-pill .logo-text {
+    background: none;
+    -webkit-text-fill-color: #0f172a;
+    /* Dark Navy Text */
+    color: #0f172a;
+    text-shadow: none;
+    font-size: 28px;
+    /* Slightly refined for the pill */
+    margin-bottom: 0;
+}
+
+.nav-pill .logo-tagline {
+    display: none;
+    /* Too cluttered for this design */
+}
+
+/* Main Navigation (Left-Center) */
+.nav-pill-menu {
+    display: flex;
+    gap: 28px;
+    margin-left: 40px;
+}
+
+.nav-pill-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: #475569;
+    /* Slate 600 */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s ease;
+}
+
+.nav-pill-link:hover,
+.nav-pill-link.active {
+    color: #0f172a;
+    /* Slate 900 */
+}
+
+.nav-pill-link .dropdown-arrow {
+    font-size: 10px;
+    color: #94a3b8;
+}
+
+/* Right Actions */
+.nav-pill-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-action-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    transition: color 0.2s ease;
+}
+
+.nav-action-link:hover {
+    color: #0f172a;
+}
+
+/* Specific Search Icon */
+.action-search-btn {
+    color: #475569;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.action-search-btn:hover {
+    color: #0f172a;
+}
+
+/* Buttons */
+.btn-pill-outline {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: transparent;
+    color: #0f172a;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-pill-outline:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.btn-pill-primary {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: #0f172a;
+    /* Dark Navy button on white header */
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #0f172a;
+    transition: all 0.2s ease;
+}
+
+.btn-pill-primary:hover {
+    background: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Dark Overlay for body when menu is open? Maybe later */
+
+/* Mega Menu Adjustments for Light Header */
+.mega-menu {
+    /* Need to override the dark styles if attached to the new header */
+    top: 60px;
+    /* Offset from link */
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    color: #0f172a;
+}
+
+.mega-menu-banner {
+    background: #f1f5f9;
+    /* Slate 100 */
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.mega-menu-banner span {
+    color: #0f172a;
+}
+
+.mega-menu-sidebar {
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+}
+
+.mega-menu-sidebar .sidebar-category {
+    color: #64748b;
+}
+
+.mega-menu-sidebar .sidebar-item {
+    color: #334155;
+}
+
+.mega-menu-sidebar .sidebar-item:hover,
+.mega-menu-sidebar .sidebar-item.active {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.mega-menu-grid-content .grid-header h4 {
+    color: #64748b;
+}
+
+.grid-item-text h5 {
+    color: #0f172a;
+}
+
+.grid-item-text p {
+    color: #64748b;
+}
+
+.grid-item:hover {
+    background: #f8fafc;
+}
+
+.featured-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.featured-card h6 {
+    color: #0f172a;
+}
+
+.featured-card p {
+    color: #64748b;
+}
+
+.mega-menu-footer {
+    border-top: 1px solid #e2e8f0;
+    background: #ffffff;
+}
+
+.footer-action {
+    color: #475569;
+}
+
+.footer-action:hover {
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+/* Mobile Responsiveness for Pill */
+@media (max-width: 1200px) {
+    .nav-pill-menu {
+        display: none;
+        /* Use mobile menu */
+    }
+
+    .nav-pill-actions {
+        display: none;
+    }
+
+    .nav-pill-mobile-toggle {
+        display: block;
+        color: #0f172a;
+        font-size: 24px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Keep one primary action visible on tablet if possible usually */
+    .nav-pill {
+        justify-content: space-between;
+    }
+}
+
+.nav-pill-mobile-toggle {
+    display: none;
+}
+
+/* Need to hide the old Main.js dependent elements or update Main.js classes */
+/* Current Main.js looks for .navbar, .mobile-menu-btn, .nav-links */
+/* We will map the new HTML to these classes or update JS. 
+   Strategy: Use NEW classes for styling, but keep 'navbar' class for JS hooks if possible, 
+   OR update JS. Updating JS is safer for a clean break. */
