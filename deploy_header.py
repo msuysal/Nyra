@@ -24,7 +24,7 @@ gold_header = """
         <div class="nav-pill" id="main-nav">
             <!-- Logo -->
             <a href="/index.html" class="logo" style="text-decoration: none;">
-                <span class="logo-text">NYRA</span>
+                <span class="logo-text">NYRA Influence Intelligence</span>
             </a>
 
             <!-- Center Navigation -->
@@ -249,7 +249,7 @@ gold_header = """
 base_dir = '/Users/olguuysal/.gemini/antigravity/scratch/nyra-landing-page'
 
 # Regex to find header
-header_pattern = re.compile(r'<header class="navbar">.*?</header>', re.DOTALL)
+header_pattern = re.compile(r'<header class="(navbar|fixed-header-wrapper)">.*?</header>', re.DOTALL)
 
 for file_name in files_to_update:
     path = os.path.join(base_dir, file_name)

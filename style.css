@@ -3255,21 +3255,27 @@ select:focus {
     font-size: 12px;
     color: var(--text-muted);
     pointer-events: none;
-}/* Re-designed Floating Header - Sprout Social Inspired */
+}
+
+/* Re-designed Floating Header - Sprout Social Inspired */
 
 /* Floating Container */
+/* Full Width Header Container */
 .fixed-header-wrapper {
     position: fixed;
-    top: 24px;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 9999;
     display: flex;
     justify-content: center;
-    padding: 0 24px;
-    /* Safety padding for small screens */
-    pointer-events: none;
-    /* Let clicks pass through outside the pill */
+    padding: 0;
+    /* Full width */
+    pointer-events: auto;
+    /* Allow clicks since it spans full top */
+    background: #ffffff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    /* Subtle border-bottom feel */
 }
 
 .nav-pill {
@@ -3277,15 +3283,18 @@ select:focus {
     background: #ffffff;
     width: 100%;
     max-width: 1300px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    /* Keep content contained max width */
+    /* Removed border-radius and top/side spacing */
+    border-radius: 0;
+    box-shadow: none;
+    /* Shadow handled by wrapper or simplified */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 24px;
+    padding: 0 24px;
     transition: all 0.3s ease;
-    height: 72px;
-    /* Fixed elegant height */
+    height: 80px;
+    /* Slightly taller for full top nav feel */
 }
 
 /* Light Mode Overrides for Header Context */
