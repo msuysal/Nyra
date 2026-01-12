@@ -36,37 +36,94 @@
             </a>
             <nav class="nav-links">
                 <div class="nav-item-dropdown">
-                    <a href="#solutions" class="nav-link-with-dropdown">Solutions <span
-                            class="dropdown-arrow">▼</span></a>
+                    <button class="nav-link-with-dropdown mobile-dropdown-btn" aria-expanded="false">Solutions <span
+                            class="dropdown-arrow">▼</span></button>
                     <div class="mega-menu">
-                        <div class="mega-menu-content">
-                            <div class="mega-menu-section">
-                                <h4>Products</h4>
-                                <a href="/index.html" class="mega-menu-item">
-                                    <strong>NYRA Influence Intelligence</strong>
-                                    <p>Powered by The Authority Graph™</p>
-                                </a>
-                                <a href="/api.html" class="mega-menu-item">
-                                    <strong>NYRA API</strong>
-                                    <span class="coming-soon-badge">Coming Soon</span>
-                                    <p>Integrate influence intelligence into your platform</p>
-                                </a>
+                        <div class="mega-menu-banner">
+                            ✨ New: <span>Authority Graph™ 2.0 is now live.</span> <a href="#news"
+                                style="color: var(--primary); margin-left: 8px;">Explore the engine &rarr;</a>
+                        </div>
+                        <div class="mega-menu-container">
+                            <aside class="mega-menu-sidebar">
+                                <div class="sidebar-category">Solutions</div>
+                                <div class="sidebar-item active">Intel Engine <i>&rarr;</i></div>
+                                <div class="sidebar-item">API & Dev <i>&rarr;</i></div>
+                                <div class="sidebar-item">Insights <i>&rarr;</i></div>
+                                <div class="sidebar-item">Partnerships <i>&rarr;</i></div>
+                            </aside>
+
+                            <div class="mega-menu-grid-content">
+                                <div class="grid-header">
+                                    <h4>Capabilities</h4>
+                                </div>
+                                <div class="grid-items">
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">🔍</div>
+                                        <div class="grid-item-text">
+                                            <h5>Semantic Search</h5>
+                                            <p>Find experts by intent, not just keywords.</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">📈</div>
+                                        <div class="grid-item-text">
+                                            <h5>Impact Prediction</h5>
+                                            <p>Forecast reach and conversion metrics.</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">🛡️</div>
+                                        <div class="grid-item-text">
+                                            <h5>Pricing Guard</h5>
+                                            <p>Eliminate overpayment with data-backed value.</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">🕸️</div>
+                                        <div class="grid-item-text">
+                                            <h5>Network Mapping</h5>
+                                            <p>Visualize clusters of true influence.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="mega-menu-explore-btn">Explore All Capabilities</button>
                             </div>
-                            <div class="mega-menu-section">
-                                <h4>Services</h4>
-                                <a href="/insights.html" class="mega-menu-item">
-                                    <strong>Insights</strong>
-                                    <p>Monitoring, reporting & competitive intelligence</p>
-                                </a>
+
+                            <div class="mega-menu-featured">
+                                <div class="featured-card">
+                                    <div class="featured-image">🚀</div>
+                                    <h6>NYRA Alpha Program</h6>
+                                    <p>Join the elite circle of authority analysts and early adopters.</p>
+                                    <a href="/careers.html" class="learn-more-link">Learn more &rarr;</a>
+                                </div>
                             </div>
+                        </div>
+                        <div class="mega-menu-footer">
+                            <a href="#signup" class="footer-action">
+                                <i>📅</i> Book your demo
+                            </a>
+                            <a href="#signup" class="footer-action">
+                                <i>⚡</i> Start your free trial
+                            </a>
+                            <a href="/api.html" class="footer-action">
+                                <i>📖</i> Take a product tour
+                            </a>
                         </div>
                     </div>
                 </div>
                 <a href="#use-cases">Use Cases</a>
                 <a href="#faq">FAQ</a>
                 <a href="contact.html">Contact</a>
+                <a href="#signup" class="btn btn-primary btn-nav mobile-only-cta">Join Waitlist</a>
             </nav>
-            <a href="#signup" class="btn btn-primary btn-nav">Join Waitlist</a>
+            <div class="nav-right">
+                <a href="#signup" class="btn btn-primary btn-nav desktop-only-cta">Join Waitlist</a>
+                <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -117,7 +174,7 @@
         </section>
 
         <!-- SOCIAL PROOF -->
-        <section class="social-proof">
+        <section class="social-proof section-light">
             <div class="container proof-container">
                 <p class="proof-label">Featured in</p>
                 <div class="proof-logos">
@@ -279,74 +336,87 @@
                 <div class="console-wrapper glass-dark">
                     <!-- Left: Menu -->
                     <div class="console-menu">
-                        <div class="menu-item active" data-id="awareness">
-                            <span class="icon">📢</span>
-                            <div class="meta">
-                                <h3>Awareness & Reach</h3>
-                                <p>Expand your audience.</p>
+                        <!-- Category 1 -->
+                        <div class="category-group active">
+                            <div class="category-header">
+                                <span class="category-title">The Reach Engine</span>
+                                <span class="category-arrow">▼</span>
+                            </div>
+                            <div class="category-subs">
+                                <div class="menu-item active" data-id="awareness">
+                                    <span class="icon">📢</span>
+                                    <h3>Awareness & Reach</h3>
+                                </div>
+                                <div class="menu-item" data-id="event">
+                                    <span class="icon">🎯</span>
+                                    <h3>Event Amplification</h3>
+                                </div>
+                                <div class="menu-item" data-id="education">
+                                    <span class="icon">📚</span>
+                                    <h3>Market Education</h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="menu-item" data-id="review">
-                            <span class="icon">⭐</span>
-                            <div class="meta">
-                                <h3>Product Review</h3>
-                                <p>Get industry validation.</p>
+
+                        <!-- Category 2 -->
+                        <div class="category-group">
+                            <div class="category-header">
+                                <span class="category-title">The Authority Lab</span>
+                                <span class="category-arrow">▼</span>
+                            </div>
+                            <div class="category-subs">
+                                <div class="menu-item" data-id="thought">
+                                    <span class="icon">💡</span>
+                                    <h3>Thought Leadership</h3>
+                                </div>
+                                <div class="menu-item" data-id="whitepaper">
+                                    <span class="icon">📄</span>
+                                    <h3>Whitepaper Collab</h3>
+                                </div>
+                                <div class="menu-item" data-id="technical">
+                                    <span class="icon">🔧</span>
+                                    <h3>Technical Trust</h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="menu-item" data-id="sales">
-                            <span class="icon">🤝</span>
-                            <div class="meta">
-                                <h3>Sales Partnership</h3>
-                                <p>Drive conversions.</p>
+
+                        <!-- Category 3 -->
+                        <div class="category-group">
+                            <div class="category-header">
+                                <span class="category-title">The Social Proof</span>
+                                <span class="category-arrow">▼</span>
+                            </div>
+                            <div class="category-subs">
+                                <div class="menu-item" data-id="review">
+                                    <span class="icon">⭐</span>
+                                    <h3>Product Review</h3>
+                                </div>
+                                <div class="menu-item" data-id="reputation">
+                                    <span class="icon">🛡️</span>
+                                    <h3>Reputation Building</h3>
+                                </div>
+                                <div class="menu-item" data-id="affinity">
+                                    <span class="icon">❤️</span>
+                                    <h3>Brand Affinity</h3>
+                                </div>
                             </div>
                         </div>
-                        <div class="menu-item" data-id="thought">
-                            <span class="icon">💡</span>
-                            <div class="meta">
-                                <h3>Thought Leadership</h3>
-                                <p>Position as expert.</p>
+
+                        <!-- Category 4 -->
+                        <div class="category-group">
+                            <div class="category-header">
+                                <span class="category-title">The Conversion Hub</span>
+                                <span class="category-arrow">▼</span>
                             </div>
-                        </div>
-                        <div class="menu-item" data-id="technical">
-                            <span class="icon">🔧</span>
-                            <div class="meta">
-                                <h3>Technical Trust</h3>
-                                <p>Build credibility.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-id="education">
-                            <span class="icon">📚</span>
-                            <div class="meta">
-                                <h3>Market Education</h3>
-                                <p>Educate your audience.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-id="whitepaper">
-                            <span class="icon">📄</span>
-                            <div class="meta">
-                                <h3>Whitepaper Collab</h3>
-                                <p>Create authority content.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-id="reputation">
-                            <span class="icon">🛡️</span>
-                            <div class="meta">
-                                <h3>Reputation Building</h3>
-                                <p>Enhance brand trust.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-id="affinity">
-                            <span class="icon">❤️</span>
-                            <div class="meta">
-                                <h3>Brand Affinity</h3>
-                                <p>Emotional connections.</p>
-                            </div>
-                        </div>
-                        <div class="menu-item" data-id="event">
-                            <span class="icon">🎯</span>
-                            <div class="meta">
-                                <h3>Event Amplification</h3>
-                                <p>Boost visibility.</p>
+                            <div class="category-subs">
+                                <div class="menu-item" data-id="affiliate">
+                                    <span class="icon">💎</span>
+                                    <h3>Affiliate Engine</h3>
+                                </div>
+                                <div class="menu-item" data-id="sales">
+                                    <span class="icon">🤝</span>
+                                    <h3>Sales Partnership</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -371,6 +441,10 @@
                             <div class="filter-pill">Authority: High</div>
                             <div class="filter-pill">Location: Global</div>
                             <div class="filter-pill">Sentiment: Positive</div>
+                        </div>
+                        <div class="dash-description" id="dash-description">
+                            Select a use case from the left to see how NYRA helps you find the right authority figures
+                            and influence your niche.
                         </div>
 
                         <div class="dash-content">
@@ -451,7 +525,7 @@
 
 
         <!-- NEWS & UPDATES -->
-        <section class="news-section reveal-on-scroll" id="news">
+        <section class="news-section section-light reveal-on-scroll" id="news">
             <div class="container">
                 <div class="section-header text-center">
                     <span class="badge">Updates</span>
@@ -607,6 +681,17 @@
                 </div>
             </div>
         </section>
+        <!-- PRE-FOOTER REVEAL -->
+        <section class="pre-footer-reveal">
+            <div class="container quote-container">
+                <div class="quote-reveal-card">
+                    <h2>Discover the power of <span class="text-highlight">Authority</span></h2>
+                    <div class="cta-reveal-group">
+                        <a href="#signup" class="btn btn-primary btn-large">Join the Waitlist &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -621,9 +706,9 @@
                     <p class="brand-desc">The influence intelligence layer for B2B. Map authority, forecast impact, and
                         activate the voices that move your market.</p>
                     <div class="social-links">
-                        <a href="#" class="footer-social-btn">Li</a>
-                        <a href="#" class="footer-social-btn">X</a>
-                        <a href="#" class="footer-social-btn">In</a>
+                        <a href="#" class="footer-social-btn" aria-label="LinkedIn">Li</a>
+                        <a href="#" class="footer-social-btn" aria-label="Twitter / X">X</a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram">In</a>
                     </div>
                 </div>
 
@@ -648,8 +733,8 @@
                     <h4>Stay Ahead</h4>
                     <p>Join our newsletter for the latest B2B influence insights.</p>
                     <form class="newsletter-form" onsubmit="event.preventDefault();">
-                        <input type="email" placeholder="Enter your email">
-                        <button type="submit" class="btn-icon">&rarr;</button>
+                        <input type="email" placeholder="Enter your email" aria-label="Email address for newsletter">
+                        <button type="submit" class="btn-icon" aria-label="Subscribe">&rarr;</button>
                     </form>
                 </div>
             </div>
@@ -675,22 +760,22 @@
             <form class="waitlist-form" id="waitlist-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" required placeholder="John">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" required placeholder="John">
                     </div>
                     <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" required placeholder="Doe">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" required placeholder="Doe">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Work Email</label>
-                    <input type="email" required placeholder="john@company.com">
+                    <label for="wemail">Work Email</label>
+                    <input type="email" id="wemail" required placeholder="john@company.com">
                 </div>
 
                 <div class="form-group">
-                    <label>Phone Number</label>
+                    <label for="phone">Phone Number</label>
                     <div class="phone-input-wrapper">
                         <div class="select-wrapper country-code">
                             <select>
