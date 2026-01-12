@@ -2905,3 +2905,208 @@ select:focus {
         padding: 120px 0 60px;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/* CAREERS PAGE STYLES */
+/* -------------------------------------------------------------------------- */
+
+.careers-hero {
+    position: relative;
+    padding: 200px 0 120px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-val {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.hero-background-gradient {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 60%);
+    z-index: 1;
+}
+
+/* Values */
+.values-section {
+    padding: 100px 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.value-card {
+    padding: 50px 40px;
+    border-radius: 32px;
+    text-align: center;
+}
+
+.value-icon {
+    font-size: 40px;
+    margin-bottom: 24px;
+    display: inline-block;
+    filter: drop-shadow(0 0 10px var(--primary-glow));
+}
+
+/* Roles */
+.roles-section {
+    padding: 100px 0;
+}
+
+.roles-container {
+    padding: 80px;
+    border-radius: 48px;
+}
+
+.roles-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.role-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.role-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    transform: translateX(10px);
+}
+
+.role-meta h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.role-location {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.role-tags {
+    display: flex;
+    gap: 12px;
+}
+
+.role-tags span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    color: var(--text-muted);
+}
+
+.speculative-box {
+    margin-top: 60px;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--border-light);
+}
+
+.link-highlight {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Perks */
+.perks-section {
+    padding: 100px 0;
+}
+
+.perks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.perk-item {
+    text-align: center;
+}
+
+.perk-icon {
+    font-size: 48px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+
+    .values-grid,
+    .perks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .role-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .roles-container {
+        padding: 40px 20px;
+    }
+
+    .careers-hero {
+        padding: 140px 0 80px;
+    }
+}
