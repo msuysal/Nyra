@@ -215,8 +215,6 @@ gold_header = """    <header class="navbar">
                     </div>
                 </div>
 
-                <a href="/api.html">API</a>
-                <a href="/insights.html">Insights</a>
                 <a href="/contact.html">Contact</a>
                 <a href="javascript:void(0)" class="btn btn-primary btn-nav open-waitlist mobile-only-cta">Join
                     Waitlist</a>
