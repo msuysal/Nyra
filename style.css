@@ -1183,8 +1183,17 @@ h1 {
 
 .industry-card span {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.industry-card p {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
 }
 
 .feature-checklist {

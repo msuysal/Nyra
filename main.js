@@ -13,27 +13,27 @@ window.addEventListener('scroll', () => {
 // Dashboard Interaction
 const dashboardData = {
     awareness: {
-        title: "Awareness & Reach",
-        results: "Precision targeting for mid-market awareness.",
-        description: "Discover who really owns the attention in your niche. Use NYRA to identify the <strong>top 1% of voices</strong> that your target audience follows daily, enabling you to build awareness where it actually sticks, rather than shouting into the void.",
+        title: "Awareness & Velocity",
+        results: "Mid-market awareness with authority-led velocity.",
+        description: "Infiltrate niche professional clusters. Use NYRA to identify the <strong>Bridge Influencers</strong> who connect siloed networks, ensuring your message travels further with less waste and maximum velocity.",
         cards: [
             {
                 name: "Sarah Chen",
                 handle: "Principal Architect @ CloudVane",
                 score: "98%",
                 auth: "95%",
-                reach: "450k Mid-Market",
+                reach: "450k Cloud Pros",
                 eng: "Top 0.5% in Tech",
                 img: 1,
-                niche: "Cloud Computing / Infrastructure",
-                verification: "Verified Authority in B2B SaaS"
+                niche: "Cloud Infrastructure",
+                verification: "Verified Bridge Influencer"
             }
         ]
     },
     event: {
-        title: "Event Amplification",
-        results: "Host selection for Enterprise Summit 2026.",
-        description: "Turn your next <strong>Summit, Workshop, or Webinar</strong> into an industry-wide event. Find and partner with the perfect hosts to lead the conversation, secure high-impact guest speakers, or recruit brand ambassadors who will announce and promote your event to the exact attendee kit you need.",
+        title: "Event Domination",
+        results: "Speaker authority mapping for Enterprise Summit.",
+        description: "Don't just sponsor—dominate. Identify the <strong>Authority Scores</strong> of speakers and attendees before the show. Activate them as digital co-hosts to own the industry's social share of voice.",
         cards: [
             {
                 name: "Marcus Thorne",
@@ -41,89 +41,89 @@ const dashboardData = {
                 score: "96%",
                 auth: "92%",
                 reach: "85k CXO Network",
-                eng: "High Intent",
+                eng: "High Social Dominance",
                 img: 19,
-                niche: "Strategic Management / Leadership",
+                niche: "Enterprise Management",
                 verification: "Event Influence Specialist"
             }
         ]
     },
     education: {
-        title: "Market Education",
-        results: "Deep-dives into AI Ethics & Compliance.",
-        description: "Complex solutions require trusted translators. Identify <strong>educational authorities</strong> who can break down your technical value proposition through deep-dives or tutorials, making sure your innovation is understood by those who need it most.",
+        title: "Category Education",
+        results: "GTM Education for AI Compliance Suite.",
+        description: "Complex solutions require trusted translators. Identify the <strong>'Teacher' personas</strong>—creators whose technical explainers are saved and shared by decision-makers when learning new categories.",
         cards: [
             {
                 name: "Dr. Elena Rostova",
                 handle: "Director of AI Ethics @ FutureLab",
                 score: "94%",
                 auth: "99%",
-                reach: "1.2M Researchers",
-                eng: "Education focus",
+                reach: "1.2M Developers",
+                eng: "High Save Rate",
                 img: 11,
-                niche: "Artificial Intelligence / Compliance",
-                verification: "Academic Authority"
+                niche: "AI Ethics & Compliance",
+                verification: "Educational Authority"
             }
         ]
     },
     thought: {
-        title: "Thought Leadership",
-        results: "Industry veteran collab for sector shift.",
-        description: "Bridge the gap between your brand and the industry's intellectual core. Find <strong>veterans and strategists</strong> to co-author articles or lead high-level discussions, placing your brand at the center of the niche's most critical B2B conversations.",
+        title: "Thought Partnership",
+        results: "SME collaboration for sector shift report.",
+        description: "Move beyond shallow guest posts. Partner with experts who have high <strong>Topic Resonance</strong> scores. Co-create content that places your brand at the center of the industry's most critical intellectual core.",
         cards: [
             {
                 name: "David Miller",
                 handle: "VP Strategy @ NextGen Telecom",
                 score: "99%",
                 auth: "100%",
-                reach: "Direct Enterprise",
-                eng: "Expert Collab",
+                reach: "F500 Decision Makers",
+                eng: "Deep Resonance",
                 img: 7,
-                niche: "Telecommunications / Network Tech",
-                verification: "Industry Veteran"
+                niche: "Telecommunications",
+                verification: "Verified Thought Partner"
             }
         ]
     },
     whitepaper: {
-        title: "Whitepaper Collaboration",
-        results: "Validation for Sustainable Logistics Paper.",
-        description: "Transform marketing material into <strong>industry standards</strong>. Partner with objective experts to validate your research, provide peer-review data, and help distribute your whitepapers through their own high-authority networks.",
+        title: "Research Co-Creation",
+        results: "Validation for Logistics 2026 Whitepaper.",
+        description: "Transform marketing assets into <strong>industry standards</strong>. Invite recognized analysts to contribute commentary to your research, increasing credibility and download-to-demo conversion rates.",
         cards: [
             {
                 name: "Prof. Alan Grant",
                 handle: "Head of Logistics @ EuroLog",
                 score: "96%",
                 auth: "94%",
-                reach: "Supply Chain Pros",
-                eng: "Peer Reviewer",
+                reach: "Supply Chain Execs",
+                eng: "Cited Authority",
                 img: 13,
-                niche: "Sustainable Supply Chain / Logistics",
-                verification: "Technical Verifier"
+                niche: "Logistics Strategy",
+                verification: "Research Validator"
             }
         ]
     },
     technical: {
-        title: "Technical Trust",
-        results: "Deep-dive audit for Cybersecurity Suite.",
-        description: "Win over the skeptics. Collaborate with <strong>independent developers and architects</strong> who can perform code-level audits or architecture reviews, building undeniable technical credibility for your enterprise-grade solutions.",
+        title: "Technical Validation",
+        results: "Code-level audit for Cybersecurity Suite.",
+        description: "Win over the technical gatekeepers. Collaborate with <strong>independent architects</strong> who can perform code audits and architecture reviews, building undeniable technical trust for your enterprise stack.",
         cards: [
             {
                 name: "Alex 'Root' Tanaka",
-                handle: "Indepenent Dev @ DevSecOps",
+                handle: "Independent Dev @ DevSecOps",
                 score: "97%",
                 auth: "100%",
-                reach: "Dev Community",
-                eng: "Code-level trust",
+                reach: "Security Engineering",
+                eng: "Architecture Trust",
                 img: 9,
-                niche: "Cybersecurity / DevSecOps",
-                verification: "Verified Security Auditor"
+                niche: "Cybersecurity",
+                verification: "Independent Reviewer"
             }
         ]
     },
     review: {
-        title: "Product Review",
-        results: "B2B SaaS Utility Review series.",
-        description: "Accelerate trust with <strong>authentic utility deep-dives</strong>. Partner with reviewers who specialize in SaaS or infrastructure to create video demos, performance benchmarks, and honest analyses that convert trial-hesitant leads into buyers.",
+        title: "Objective Reviews",
+        results: "Honest Benchmark series for SaaS Suite.",
+        description: "Orchestrate <strong>Honest Benchmarks</strong>. Get your tool in the hands of the most critical voices. Objective validation from a respected reviewer is 10x more powerful than any paid testimonial.",
         cards: [
             {
                 name: "Jessica Wu",
@@ -131,17 +131,17 @@ const dashboardData = {
                 score: "95%",
                 auth: "92%",
                 reach: "Founders Circle",
-                eng: "High Intensity",
+                eng: "High Intent",
                 img: 3,
-                niche: "Software Analysis / Founding B2B",
-                verification: "Top SaaS Reviewer"
+                niche: "SaaS Utility",
+                verification: "Verified Critic"
             }
         ]
     },
     reputation: {
-        title: "Reputation Building",
-        results: "Trust-moat construction for FinTech GTM.",
-        description: "Construct a <strong>'moat of trust'</strong> around your brand. Consistently secure 3rd-party validations and sentiment-shifting mentions from across the authority network to ensure your market standing remains unshakeable.",
+        title: "Reputation Defense",
+        results: "Trust-moat for FinTech GTM.",
+        description: "Construct a <strong>'moat of trust'</strong>. Build a network of 'Protector' influencers who naturally advocate for your brand during critical industry shifts and competitive attacks.",
         cards: [
             {
                 name: "Omar Sharif",
@@ -149,35 +149,35 @@ const dashboardData = {
                 score: "98%",
                 auth: "97%",
                 reach: "Finance Execs",
-                eng: "Signal Builder",
+                eng: "Signal Defense",
                 img: 15,
-                niche: "Financial Services / Compliance",
-                verification: "Trust Catalyst"
+                niche: "Compliance Strategy",
+                verification: "Trust Protector"
             }
         ]
     },
     affinity: {
-        title: "Brand Affinity",
-        results: "Emotional loyalty program.",
-        description: "Move from transactional to <strong>emotional loyalty</strong>. Discover creators who live your values—whether it’s sustainability or innovation—to build community programs that turn customers into long-term advocates.",
+        title: "Alignment Strategy",
+        results: "Value-based loyalty program.",
+        description: "Move from transactions to <strong>cultural resonance</strong>. Use NYRA's cultural alignment filters to find voices who live your brand's core values, turning customers into advocates.",
         cards: [
             {
                 name: "Chloe Bennett",
                 handle: "Culture Architect",
                 score: "93%",
                 auth: "85%",
-                reach: "Brand Loyalists",
-                eng: "Eco-focus",
+                reach: "Value Seekers",
+                eng: "High Affinity",
                 img: 17,
-                niche: "Brand Culture / Sustainability",
-                verification: "Value-based Advocate"
+                niche: "Sustainability",
+                verification: "Alignment Match"
             }
         ]
     },
     affiliate: {
-        title: "Affiliate Engine",
-        results: "Direct Rev via Technical Partners.",
-        description: "Treat influence as a <strong>performance channel</strong>. Activate a network of technical consultants and niche experts who will drive direct revenue by recommending your product to their clients as a standard solution in their stack.",
+        title: "High-Ticket Affiliates",
+        results: "Revenue via 'Consul' partners.",
+        description: "Treat influence as a <strong>performance channel</strong>. Partner with 'Consul' influencers who act as trusted advisors to procurement teams, rewarding them for high-intent introductions.",
         cards: [
             {
                 name: "Lisa Vong",
@@ -185,28 +185,28 @@ const dashboardData = {
                 score: "96%",
                 auth: "88%",
                 reach: "Founder Network",
-                eng: "Purchase intent",
+                eng: "Purchase Intent",
                 img: 5,
-                niche: "Growth Strategy / Multi-channel",
-                verification: "Top Affiliate Performer"
+                niche: "GTM Strategy",
+                verification: "Consul Performance"
             }
         ]
     },
     sales: {
-        title: "Sales Partnership",
-        results: "Executive bridge for F500 accounts.",
-        description: "Equip your sales team with an <strong>unfair advantage</strong>. Use NYRA to find insiders who can provide direct warm introductions to C-level executives at Fortune 500 accounts, bypassing cold outreach and shortening sales cycles.",
+        title: "Sales Intelligence",
+        results: "Client brief for F500 accounts.",
+        description: "Equip your sales team with <strong>Influence Briefs</strong>. Know exactly which external voices a prospect follows and listens to, allowing for hyper-personalized and authoritative outreach.",
         cards: [
             {
                 name: "Robert Black",
                 handle: "F500 Implementation Partner",
                 score: "94%",
                 auth: "99%",
-                reach: "C-Level Bridge",
-                eng: "Enterprise Trust",
+                reach: "Enterprise Bridge",
+                eng: "Direct Access",
                 img: 21,
-                niche: "Enterprise Sales / Digital Transformation",
-                verification: "Strategic Bridge-builder"
+                niche: "Enterprise Digital",
+                verification: "Strategic Bridge"
             }
         ]
     }
