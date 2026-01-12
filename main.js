@@ -10,306 +10,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Dashboard Interaction
-const dashboardData = {
-    awareness: {
-        title: "Awareness & Velocity",
-        results: "Mid-market awareness with authority-led velocity.",
-        description: "Infiltrate niche professional clusters. Use NYRA to identify the <strong>Bridge Influencers</strong> who connect siloed networks, ensuring your message travels further with less waste and maximum velocity.",
-        cards: [
-            {
-                name: "Sarah Chen",
-                handle: "Principal Architect @ CloudVane",
-                score: "98%",
-                auth: "95%",
-                reach: "450k Cloud Pros",
-                eng: "Top 0.5% in Tech",
-                img: 1,
-                niche: "Cloud Infrastructure",
-                verification: "Verified Bridge Influencer"
-            }
-        ]
-    },
-    event: {
-        title: "Event Domination",
-        results: "Speaker authority mapping for Enterprise Summit.",
-        description: "Don't just sponsor—dominate. Identify the <strong>Authority Scores</strong> of speakers and attendees before the show. Activate them as digital co-hosts to own the industry's social share of voice.",
-        cards: [
-            {
-                name: "Marcus Thorne",
-                handle: "Strategic Advisor @ Global Insights",
-                score: "96%",
-                auth: "92%",
-                reach: "85k CXO Network",
-                eng: "High Social Dominance",
-                img: 19,
-                niche: "Enterprise Management",
-                verification: "Event Influence Specialist"
-            }
-        ]
-    },
-    education: {
-        title: "Category Education",
-        results: "GTM Education for AI Compliance Suite.",
-        description: "Complex solutions require trusted translators. Identify the <strong>'Teacher' personas</strong>—creators whose technical explainers are saved and shared by decision-makers when learning new categories.",
-        cards: [
-            {
-                name: "Dr. Elena Rostova",
-                handle: "Director of AI Ethics @ FutureLab",
-                score: "94%",
-                auth: "99%",
-                reach: "1.2M Developers",
-                eng: "High Save Rate",
-                img: 11,
-                niche: "AI Ethics & Compliance",
-                verification: "Educational Authority"
-            }
-        ]
-    },
-    thought: {
-        title: "Thought Partnership",
-        results: "SME collaboration for sector shift report.",
-        description: "Move beyond shallow guest posts. Partner with experts who have high <strong>Topic Resonance</strong> scores. Co-create content that places your brand at the center of the industry's most critical intellectual core.",
-        cards: [
-            {
-                name: "David Miller",
-                handle: "VP Strategy @ NextGen Telecom",
-                score: "99%",
-                auth: "100%",
-                reach: "F500 Decision Makers",
-                eng: "Deep Resonance",
-                img: 7,
-                niche: "Telecommunications",
-                verification: "Verified Thought Partner"
-            }
-        ]
-    },
-    whitepaper: {
-        title: "Research Co-Creation",
-        results: "Validation for Logistics 2026 Whitepaper.",
-        description: "Transform marketing assets into <strong>industry standards</strong>. Invite recognized analysts to contribute commentary to your research, increasing credibility and download-to-demo conversion rates.",
-        cards: [
-            {
-                name: "Prof. Alan Grant",
-                handle: "Head of Logistics @ EuroLog",
-                score: "96%",
-                auth: "94%",
-                reach: "Supply Chain Execs",
-                eng: "Cited Authority",
-                img: 13,
-                niche: "Logistics Strategy",
-                verification: "Research Validator"
-            }
-        ]
-    },
-    technical: {
-        title: "Technical Validation",
-        results: "Code-level audit for Cybersecurity Suite.",
-        description: "Win over the technical gatekeepers. Collaborate with <strong>independent architects</strong> who can perform code audits and architecture reviews, building undeniable technical trust for your enterprise stack.",
-        cards: [
-            {
-                name: "Alex 'Root' Tanaka",
-                handle: "Independent Dev @ DevSecOps",
-                score: "97%",
-                auth: "100%",
-                reach: "Security Engineering",
-                eng: "Architecture Trust",
-                img: 9,
-                niche: "Cybersecurity",
-                verification: "Independent Reviewer"
-            }
-        ]
-    },
-    review: {
-        title: "Objective Reviews",
-        results: "Honest Benchmark series for SaaS Suite.",
-        description: "Orchestrate <strong>Honest Benchmarks</strong>. Get your tool in the hands of the most critical voices. Objective validation from a respected reviewer is 10x more powerful than any paid testimonial.",
-        cards: [
-            {
-                name: "Jessica Wu",
-                handle: "Software Reviewer @ SaaSList",
-                score: "95%",
-                auth: "92%",
-                reach: "Founders Circle",
-                eng: "High Intent",
-                img: 3,
-                niche: "SaaS Utility",
-                verification: "Verified Critic"
-            }
-        ]
-    },
-    reputation: {
-        title: "Reputation Defense",
-        results: "Trust-moat for FinTech GTM.",
-        description: "Construct a <strong>'moat of trust'</strong>. Build a network of 'Protector' influencers who naturally advocate for your brand during critical industry shifts and competitive attacks.",
-        cards: [
-            {
-                name: "Omar Sharif",
-                handle: "FinTech Compliance Lead",
-                score: "98%",
-                auth: "97%",
-                reach: "Finance Execs",
-                eng: "Signal Defense",
-                img: 15,
-                niche: "Compliance Strategy",
-                verification: "Trust Protector"
-            }
-        ]
-    },
-    affinity: {
-        title: "Alignment Strategy",
-        results: "Value-based loyalty program.",
-        description: "Move from transactions to <strong>cultural resonance</strong>. Use NYRA's cultural alignment filters to find voices who live your brand's core values, turning customers into advocates.",
-        cards: [
-            {
-                name: "Chloe Bennett",
-                handle: "Culture Architect",
-                score: "93%",
-                auth: "85%",
-                reach: "Value Seekers",
-                eng: "High Affinity",
-                img: 17,
-                niche: "Sustainability",
-                verification: "Alignment Match"
-            }
-        ]
-    },
-    affiliate: {
-        title: "High-Ticket Affiliates",
-        results: "Revenue via 'Consul' partners.",
-        description: "Treat influence as a <strong>performance channel</strong>. Partner with 'Consul' influencers who act as trusted advisors to procurement teams, rewarding them for high-intent introductions.",
-        cards: [
-            {
-                name: "Lisa Vong",
-                handle: "Growth Consultant @ ScaleUp",
-                score: "96%",
-                auth: "88%",
-                reach: "Founder Network",
-                eng: "Purchase Intent",
-                img: 5,
-                niche: "GTM Strategy",
-                verification: "Consul Performance"
-            }
-        ]
-    },
-    sales: {
-        title: "Sales Intelligence",
-        results: "Client brief for F500 accounts.",
-        description: "Equip your sales team with <strong>Influence Briefs</strong>. Know exactly which external voices a prospect follows and listens to, allowing for hyper-personalized and authoritative outreach.",
-        cards: [
-            {
-                name: "Robert Black",
-                handle: "F500 Implementation Partner",
-                score: "94%",
-                auth: "99%",
-                reach: "Enterprise Bridge",
-                eng: "Direct Access",
-                img: 21,
-                niche: "Enterprise Digital",
-                verification: "Strategic Bridge"
-            }
-        ]
-    }
-};
-
-const dashboardContainer = document.querySelector('.use-cases-interactive');
-
-if (dashboardContainer) {
-    const categoryGroups = document.querySelectorAll('.category-group');
-    const menuItems = document.querySelectorAll('.menu-item');
-    const dashCampaign = document.getElementById('dash-campaign');
-    const dashResultsTitle = document.getElementById('dash-results-title');
-    const dashDescription = document.getElementById('dash-description');
-    const dashCardsContainer = document.getElementById('dash-cards');
-
-    // Handle Category Header Clicks
-    categoryGroups.forEach(group => {
-        const header = group.querySelector('.category-header');
-        if (header) {
-            header.addEventListener('click', () => {
-                const isActive = group.classList.contains('active');
-
-                // Close all groups
-                categoryGroups.forEach(g => g.classList.remove('active'));
-
-                if (!isActive) {
-                    group.classList.add('active');
-                    // Automatically click the first sub-item of this category
-                    const firstItem = group.querySelector('.menu-item');
-                    if (firstItem) firstItem.click();
-                }
-            });
-        }
-    });
-
-    // Handle Sub-item Clicks
-    menuItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent trigger header
-
-            // Active State for Items
-            menuItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-
-            const key = item.getAttribute('data-id');
-            const data = dashboardData[key];
-
-            if (data) {
-                // Update Dashboard Text
-                if (dashCampaign) dashCampaign.innerText = data.title;
-                if (dashResultsTitle) dashResultsTitle.innerText = data.results;
-                if (dashDescription) dashDescription.innerHTML = data.description;
-
-                // Render Dashboard Cards
-                if (dashCardsContainer) {
-                    dashCardsContainer.innerHTML = '';
-                    data.cards.forEach((card, index) => {
-                        const cardHTML = `
-                            <div class="dash-card" style="animation-delay: ${index * 0.1}s">
-                                <div class="card-head">
-                                    <div class="avatar-circle" style="background-image: url('https://i.pravatar.cc/150?u=${card.img}')"></div>
-                                    <div class="card-meta">
-                                        <div class="name">${card.name}</div>
-                                        <div class="handle">${card.handle}</div>
-                                        <div class="niche-tag">${card.niche}</div>
-                                    </div>
-                                    <div class="right-meta">
-                                        <div class="score-badge">${card.score} Fit</div>
-                                        <div class="verify-badge">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                            ${card.verification}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <div class="stat-row">
-                                        <div class="stat">
-                                            <label>Authority Index</label>
-                                            <div class="progress"><div class="fill" style="width: ${card.auth}"></div></div>
-                                        </div>
-                                        <div class="stat">
-                                            <label>Network Context</label>
-                                            <div class="val">${card.reach}</div>
-                                        </div>
-                                        <div class="stat">
-                                            <label>Engagement Signal</label>
-                                            <div class="val">${card.eng}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        dashCardsContainer.insertAdjacentHTML('beforeend', cardHTML);
-                    });
-                }
-            }
-        });
-    });
-
-    // Auto-click the first active item on load
-    const activeItem = document.querySelector('.menu-item.active');
-    if (activeItem) activeItem.click();
-}
 
 // Smooth Scroll for Anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -499,7 +199,78 @@ if (industriesSection && industryCards.length > 0) {
         });
     };
 
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
     handleScroll(); // Initial call
+}
+
+// Waitlist Modal Logic
+const modal = document.getElementById('waitlist-modal');
+const openButtons = document.querySelectorAll('.open-waitlist');
+const closeButton = document.getElementById('close-modal');
+const waitlistForm = document.getElementById('waitlist-form');
+
+if (modal && openButtons.length > 0) {
+    const openModal = () => {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    openButtons.forEach(btn => btn.addEventListener('click', openModal));
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            closeModal();
+        }
+    });
+}
+
+// Waitlist Form Submission
+if (waitlistForm) {
+    waitlistForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = waitlistForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerText;
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Sending...';
+
+        // Simulate submission or actual fetch
+        try {
+            // Formspree or other endpoint could be used here
+            // const response = await fetch('YOUR_FORM_ENDPOINT', { ... });
+
+            setTimeout(() => {
+                alert('Thank you for joining our waitlist! We will be in touch soon.');
+                waitlistForm.reset();
+                if (modal) modal.classList.remove('open');
+                document.body.style.overflow = '';
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+            }, 1000);
+
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('There was an error. Please try again.');
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalText;
+        }
+    });
 }
