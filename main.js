@@ -100,8 +100,8 @@ faqItems.forEach(item => {
 // Mobile Navigation Logic
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
-const mobileDropdownBtn = document.querySelector('.mobile-dropdown-btn');
-const megaMenu = document.querySelector('.mega-menu');
+const mobileDropdownBtn = document.querySelector('.mobile-dropdown-btn'); // removed
+const megaMenu = document.querySelector('.mega-menu'); // removed
 
 if (mobileBtn && navLinks) {
     mobileBtn.addEventListener('click', () => {
@@ -126,28 +126,50 @@ if (mobileBtn && navLinks) {
     });
 }
 
-if (mobileDropdownBtn && megaMenu) {
-    mobileDropdownBtn.addEventListener('click', (e) => {
-        // Only trigger on mobile (check window width or just rely on CSS visibility)
-        if (window.innerWidth <= 1024) {
-            e.preventDefault(); // Prevent jump
-            e.stopPropagation();
-            megaMenu.classList.toggle('mobile-visible');
+const dropdowns = document.querySelectorAll('.nav-item-dropdown');
 
-            // Toggle arrow rotation
-            const arrow = mobileDropdownBtn.querySelector('.dropdown-arrow');
-            if (arrow) {
-                arrow.style.transform = megaMenu.classList.contains('mobile-visible')
-                    ? 'rotate(180deg)'
-                    : 'rotate(0deg)';
+dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.mobile-dropdown-btn');
+    const menu = dropdown.querySelector('.mega-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', (e) => {
+            // Only trigger on mobile (check window width or just rely on CSS visibility)
+            if (window.innerWidth <= 1024) {
+                e.preventDefault(); // Prevent jump
+                e.stopPropagation();
+
+                // Close other menus
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        const otherMenu = otherDropdown.querySelector('.mega-menu');
+                        const otherBtn = otherDropdown.querySelector('.mobile-dropdown-btn');
+                        if (otherMenu) otherMenu.classList.remove('mobile-visible');
+                        if (otherBtn) {
+                            otherBtn.setAttribute('aria-expanded', 'false');
+                            const arrow = otherBtn.querySelector('.dropdown-arrow');
+                            if (arrow) arrow.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+
+                menu.classList.toggle('mobile-visible');
+
+                // Toggle arrow rotation
+                const arrow = btn.querySelector('.dropdown-arrow');
+                if (arrow) {
+                    arrow.style.transform = menu.classList.contains('mobile-visible')
+                        ? 'rotate(180deg)'
+                        : 'rotate(0deg)';
+                }
+
+                // Toggle aria-expanded
+                const isExpanded = menu.classList.contains('mobile-visible');
+                btn.setAttribute('aria-expanded', isExpanded);
             }
-
-            // Toggle aria-expanded
-            const isExpanded = megaMenu.classList.contains('mobile-visible');
-            mobileDropdownBtn.setAttribute('aria-expanded', isExpanded);
-        }
-    });
-}
+        });
+    }
+});
 
 // Industry Cards Scroll Animation
 const industriesSection = document.querySelector('.industries-expand');

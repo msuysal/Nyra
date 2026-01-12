@@ -384,6 +384,16 @@ ul {
     min-height: 420px;
 }
 
+.mega-menu-container.use-cases-layout {
+    grid-template-columns: 1fr;
+    min-height: auto;
+}
+
+.mega-menu-container.use-cases-layout .mega-menu-grid-content .grid-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
 .mega-menu-sidebar {
     border-right: 1px solid var(--border-light);
     padding: 32px;
