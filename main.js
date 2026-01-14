@@ -1,11 +1,11 @@
 // Main Navbar Scroll Effect
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
+    const header = document.querySelector('.fixed-header-wrapper');
+    if (header) {
+        if (window.scrollY > 20) {
+            header.classList.add('scrolled');
         } else {
-            navbar.classList.remove('scrolled');
+            header.classList.remove('scrolled');
         }
     }
 });

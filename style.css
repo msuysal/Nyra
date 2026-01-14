@@ -3529,36 +3529,44 @@ select:focus {
 
 .nav-pill {
     pointer-events: auto;
-    background: #f9f9f9;
-    width: calc(100% - 48px);
-    /* Leave space on left and right */
-    max-width: 1400px;
-    border-radius: 0 0 24px 24px;
-    /* Round ONLY bottom corners */
-    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    background: rgba(10, 11, 16, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    border-radius: 20px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
-    transition: all 0.3s ease;
-    height: 80px;
+    padding: 0 24px;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    height: 72px;
+}
+
+.fixed-header-wrapper.scrolled .nav-pill {
+    margin-top: 10px;
+    height: 64px;
+    background: rgba(8, 9, 15, 0.95);
+    width: calc(100% - 80px);
 }
 
 /* Light Mode Overrides for Header Context */
 .nav-pill .logo-text {
-    background: none;
-    -webkit-text-fill-color: #0f172a;
-    /* Dark Navy Text */
-    color: #0f172a;
-    text-shadow: none;
-    font-size: 28px;
-    /* Slightly refined for the pill */
-    margin-bottom: 0;
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: -0.02em;
 }
 
 .nav-pill .logo-tagline {
-    display: none;
-    /* Too cluttered for this design */
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Main Navigation (Left-Center) */
@@ -3571,20 +3579,19 @@ select:focus {
 .nav-pill-link {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
-    font-size: 15px;
-    color: #475569;
-    /* Slate 600 */
+    font-size: 14px;
+    color: var(--text-muted);
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 4px;
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-pill-link:hover,
 .nav-pill-link.active {
-    color: #0f172a;
-    /* Slate 900 */
+    color: #fff;
+    text-shadow: 0 0 15px var(--primary-glow);
 }
 
 .nav-pill-link .dropdown-arrow {
@@ -3666,88 +3673,71 @@ select:focus {
 
 /* Dark Overlay for body when menu is open? Maybe later */
 
-/* Mega Menu Adjustments for Light Header */
+/* Mega Menu High-End Overrides */
 .mega-menu {
-    /* Need to override the dark styles if attached to the new header */
-    top: 60px;
-    /* Offset from link */
-    background: #f9f9f9;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    color: #0f172a;
+    top: calc(100% + 12px);
+    background: rgba(10, 11, 16, 0.95);
+    backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 40px 100px -20px rgba(0, 0, 0, 0.8),
+        inset 0 0 40px rgba(56, 189, 248, 0.05);
+    color: #fff;
+    border-radius: 24px;
 }
 
 .mega-menu-banner {
-    background: #f1f5f9;
-    /* Slate 100 */
-    border-bottom: 1px solid #e2e8f0;
-    color: #334155;
-}
-
-.mega-menu-banner span {
-    color: #0f172a;
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--primary);
 }
 
 .mega-menu-sidebar {
-    background: #f8fafc;
-    border-right: 1px solid #e2e8f0;
-}
-
-.mega-menu-sidebar .sidebar-category {
-    color: #64748b;
+    background: rgba(255, 255, 255, 0.02);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .mega-menu-sidebar .sidebar-item {
-    color: #334155;
+    color: var(--text-muted);
 }
 
 .mega-menu-sidebar .sidebar-item:hover,
 .mega-menu-sidebar .sidebar-item.active {
-    background: #e2e8f0;
-    color: #0f172a;
-}
-
-.mega-menu-grid-content .grid-header h4 {
-    color: #64748b;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
 }
 
 .grid-item-text h5 {
-    color: #0f172a;
+    color: #fff;
+    font-weight: 600;
 }
 
 .grid-item-text p {
-    color: #64748b;
+    color: var(--text-muted);
+}
+
+.grid-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .grid-item:hover {
-    background: #f8fafc;
-}
-
-.featured-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-}
-
-.featured-card h6 {
-    color: #0f172a;
-}
-
-.featured-card p {
-    color: #64748b;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    transform: translateY(-4px);
 }
 
 .mega-menu-footer {
-    border-top: 1px solid #e2e8f0;
-    background: #f9f9f9;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.01);
 }
 
 .footer-action {
-    color: #475569;
+    color: var(--text-muted);
 }
 
 .footer-action:hover {
-    color: #0f172a;
-    background: #f8fafc;
+    color: #fff;
 }
 
 /* Mobile Responsiveness for Pill */
