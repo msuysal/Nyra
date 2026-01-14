@@ -984,17 +984,20 @@ h1 {
 .hero-stats {
     display: flex;
     flex-wrap: wrap;
-    gap: 48px;
+    gap: 40px;
     margin-top: 64px;
     padding-top: 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     width: 100%;
+    justify-content: flex-start;
 }
 
 .stat-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    text-align: center;
     transition: var(--transition);
     opacity: 0;
     animation: statItemFadeIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -1039,11 +1042,12 @@ h1 {
 }
 
 .stat-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     color: var(--primary);
     flex-shrink: 0;
     transition: var(--transition);
+    filter: drop-shadow(0 0 8px var(--primary-glow));
 }
 
 .stat-item span {
@@ -1076,14 +1080,14 @@ h1 {
 @media (max-width: 576px) {
     .hero-stats {
         flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
+        gap: 40px;
+        align-items: center;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 24px;
+        padding-top: 32px;
     }
 
-    .stat-item span {
-        white-space: normal;
+    .stat-item {
+        width: 100%;
     }
 }
 
