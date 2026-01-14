@@ -11,6 +11,8 @@ window.addEventListener('scroll', () => {
 });
 
 
+
+
 // Smooth Scroll for Anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -99,17 +101,17 @@ faqItems.forEach(item => {
 
 // Mobile Navigation Logic
 const mobileBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-const mobileDropdownBtn = document.querySelector('.mobile-dropdown-btn'); // removed
-const megaMenu = document.querySelector('.mega-menu'); // removed
+const navLinks = document.querySelector('.nav-pill-menu');
+
 
 if (mobileBtn && navLinks) {
     mobileBtn.addEventListener('click', () => {
         mobileBtn.classList.toggle('active');
-        navLinks.classList.toggle('nav-active');
+        const header = document.querySelector('.fixed-header-wrapper');
+        header.classList.toggle('nav-open');
 
         // Prevent body scroll when menu is open
-        if (navLinks.classList.contains('nav-active')) {
+        if (header.classList.contains('nav-open')) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
@@ -295,4 +297,101 @@ if (waitlistForm) {
             submitBtn.innerText = originalText;
         }
     });
+}
+// Search Functionality
+const searchModal = document.getElementById('search-modal');
+const searchBtn = document.querySelector('.action-search-btn');
+const closeSearch = document.getElementById('close-search');
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+const siteContent = [
+    { title: 'Expert Discovery', description: 'Find B2B content creators, LinkedIn authorities, and KOLs.', url: '/index.html#features' },
+    { title: 'Velocity Forecasting', description: 'Predict message travel speed.', url: '/index.html#features' },
+    { title: 'Intelligence Guard', description: 'Market-value audits.', url: '/index.html#features' },
+    { title: 'Influence Mapping', description: 'Map Digital Opinion Leaders (DOLs) and thought leaders.', url: '/index.html#features' },
+    { title: 'Insights Blog', description: 'Latest trends in authority.', url: '/insights.html' },
+    { title: 'About Us', description: 'Our mission and vision.', url: '/about.html' },
+    { title: 'Careers', description: 'Join our team.', url: '/careers.html' },
+    { title: 'FAQ', description: 'Common questions.', url: '/faq.html' },
+    { title: 'Contact Support', description: 'Get help with your account.', url: '/contact.html' }
+];
+
+if (searchModal && searchBtn) {
+    const openSearch = () => {
+        searchModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => searchInput.focus(), 100);
+    };
+
+    const closeSearchModal = () => {
+        searchModal.classList.remove('open');
+        document.body.style.overflow = '';
+        searchInput.value = '';
+        renderResults('');
+    };
+
+    searchBtn.addEventListener('click', openSearch);
+    if (closeSearch) closeSearch.addEventListener('click', closeSearchModal);
+
+    searchModal.addEventListener('click', (e) => {
+        if (e.target === searchModal) closeSearchModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchModal.classList.contains('open')) closeSearchModal();
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            openSearch();
+        }
+    });
+
+    const renderResults = (query) => {
+        if (!query) {
+            searchResults.innerHTML = `
+                <div class="search-placeholder">
+                    <p>Type to search the Authority Graph™</p>
+                    <div class="search-suggestions">
+                        ${['Expert Discovery', 'KOLs', 'LinkedIn', 'B2B Marketing'].map(s => `<span class="suggestion-chip">${s}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+
+            // Re-bind click events to new suggestions
+            searchResults.querySelectorAll('.suggestion-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    searchInput.value = chip.innerText;
+                    renderResults(chip.innerText);
+                    searchInput.focus();
+                });
+            });
+            return;
+        }
+
+        const filtered = siteContent.filter(item =>
+            item.title.toLowerCase().includes(query.toLowerCase()) ||
+            item.description.toLowerCase().includes(query.toLowerCase())
+        );
+
+        if (filtered.length === 0) {
+            searchResults.innerHTML = `<div class="no-results">No results found for "${query}"</div>`;
+            return;
+        }
+
+        searchResults.innerHTML = filtered.map(item => `
+            <a href="${item.url}" class="search-result-item">
+                <div class="result-info">
+                    <h5>${item.title}</h5>
+                    <p>${item.description}</p>
+                </div>
+                <div class="result-arrow">→</div>
+            </a>
+        `).join('');
+    };
+
+    searchInput.addEventListener('input', (e) => {
+        renderResults(e.target.value);
+    });
+
+    // Handle suggestions click even when results are rendering? No, only in placeholder.
 }

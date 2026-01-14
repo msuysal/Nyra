@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | NYRA Intelligence</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .about-hero {
+            padding: 160px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+
+        .about-hero .lead {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .about-section {
+            padding: var(--section-padding);
+        }
+
+        .about-content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content-grid {
+            display: grid;
+            gap: 80px;
+        }
+
+        .about-text-block h2 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 24px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-text-block h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .about-text-block p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .team-section {
+            padding: var(--section-padding);
+            background: rgba(255, 255, 255, 0.01);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            margin-top: 64px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.04);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .team-card:hover::before {
+            opacity: 1;
+        }
+
+        .team-image-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 24px;
+        }
+
+        .team-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .team-card:hover .team-image {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .team-info h3 {
+            color: #fff;
+            font-size: 24px;
+            margin: 0 0 8px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .team-bio {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .careers-cta-section {
+            padding: 120px 0 160px;
+        }
+
+        .careers-cta-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-light);
+            border-radius: 32px;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .careers-cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .careers-cta-card h2 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 24px;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .careers-cta-card p {
+            color: var(--text-muted);
+            font-size: 19px;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cta-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .visual-node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        .visual-node:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation: float 8s infinite ease-in-out;
+        }
+
+        .visual-node:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation: float 10s infinite reverse ease-in-out;
+        }
+
+        .visual-node:nth-child(3) {
+            bottom: 20%;
+            left: 30%;
+            animation: float 12s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(20px, -20px);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 48px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="fixed-header-wrapper">
+        <div class="nav-pill" id="main-nav">
+            <!-- Logo -->
+            <a href="/index.html" class="logo" style="text-decoration: none;">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 8V24L24 8V24" stroke="#050505" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="8" cy="8" r="2.5" fill="#050505" />
+                        <circle cx="24" cy="24" r="2.5" fill="#050505" />
+                        <circle cx="8" cy="24" r="2.5" fill="#050505" />
+                        <circle cx="24" cy="8" r="2.5" fill="#050505" />
+                    </svg>
+                </div>
+                <div class="logo-content">
+                    <span class="logo-text">NYRA<span class="logo-accent">.</span></span>
+                    <span class="logo-tagline">Authority Intelligence</span>
+                </div>
+            </a>
+
+            <!-- Center Navigation -->
+            <nav class="nav-pill-menu">
+                <div class="nav-item-dropdown">
+                    <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
+                        Products <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="mega-menu">
+                        <div class="mega-menu-banner">
+                            ✨ New: <span>Authority Graph™ 2.0 is now live.</span> <a href="/index.html#news"
+                                style="color: var(--secondary); margin-left: 8px;">Explore the engine &rarr;</a>
+                        </div>
+                        <div class="mega-menu-container">
+                            <aside class="mega-menu-sidebar">
+                                <div class="sidebar-category">Core Platform</div>
+                                <div class="sidebar-item active">Intel Engine <i>&rarr;</i></div>
+                                <div class="sidebar-item">Predictive Graph <i>&rarr;</i></div>
+                            </aside>
+                            <div class="mega-menu-grid-content">
+                                <div class="grid-header">
+                                    <h4>Platform Capabilities</h4>
+                                </div>
+                                <div class="grid-items">
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">🔍</div>
+                                        <div class="grid-item-text">
+                                            <h5>Expert Discovery</h5>
+                                            <p>Find authority figures by intent.</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">📈</div>
+                                        <div class="grid-item-text">
+                                            <h5>Velocity Forecasting</h5>
+                                            <p>Predict message travel speed.</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">🛡️</div>
+                                        <div class="grid-item-text">
+                                            <h5>Intelligence Guard</h5>
+                                            <p>Market-value audits.</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item">
+                                        <div class="grid-item-icon">🕸️</div>
+                                        <div class="grid-item-text">
+                                            <h5>Influence Mapping</h5>
+                                            <p>Visual network graphs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="nav-item-dropdown">
+                    <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
+                        Resources <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="mega-menu mega-menu-resources">
+                        <div class="mega-menu-container">
+                            <div class="mega-menu-grid-content" style="width: 100%;">
+                                <div class="grid-header">
+                                    <h4>Learn & Connect</h4>
+                                </div>
+                                <div class="grid-items col-2">
+                                    <a href="/insights.html" class="grid-item-link">
+                                        <div class="grid-item">
+                                            <div class="grid-item-icon">📰</div>
+                                            <div class="grid-item-text">
+                                                <h5>Insights Blog</h5>
+                                                <p>Latest trends in authority.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/faq.html" class="grid-item-link">
+                                        <div class="grid-item">
+                                            <div class="grid-item-icon">❓</div>
+                                            <div class="grid-item-text">
+                                                <h5>FAQ</h5>
+                                                <p>Common questions.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="nav-pill-actions">
+                <button class="action-search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <a href="https://nyra-webservice-dev-kxi49.ondigitalocean.app/login" target="_blank"
+                    rel="noopener noreferrer" class="nav-action-link">Login</a>
+                <a href="javascript:void(0)" class="btn-pill-primary open-waitlist">Join Waitlist</a>
+            </div>
+
+            <button class="nav-pill-mobile-toggle mobile-menu-btn" aria-label="Toggle Menu">
+                <span class="bar">☰</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero reveal-on-scroll">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge">OUR MISSION</span>
+                    <h1>The Global Standard for <br><span class="text-highlight-blue">B2B Influencer Marketing</span>.
+                    </h1>
+                    <p class="lead">
+                        We are on a mission to bring engineering precision to the chaotic world of B2B influence,
+                        mapping every key opinion leader and digital authority node.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section reveal-on-scroll">
+            <div class="container">
+                <div class="about-content-wrapper">
+                    <div class="about-content-grid">
+                        <div class="about-text-block">
+                            <h2>The Vision</h2>
+                            <p>
+                                In the modern B2B landscape, vanity metrics are failing. Follower counts and generic
+                                engagement rates no longer predict market movement. At NYRA, we believe that true
+                                influence isn't about being loud—it's about being listened to by the right people.
+                                We map the **Key Opinion Leaders (KOLs)** and **Digital Opinion Leaders (DOLs)** who
+                                actually drive decisions.
+                            </p>
+                            <p>
+                                We built the Authority Graph™ to map the intellectual resonance of **thought leaders**
+                                and **LinkedIn influencers** within specific
+                                technical sectors. By analyzing millions of semantic connections, professional
+                                citations, and decision-maker interactions, we provide companies with the intelligence
+                                layer needed to move markets with confidence.
+                            </p>
+                        </div>
+
+                        <div class="about-text-block">
+                            <h2>Our Approach</h2>
+                            <p>
+                                We treat influence as a data science problem, not a creative one. Our team of engineers
+                                and researchers has developed a proprietary engine that identifies the true "nodes of
+                                influence"—the **B2B content creators** and **LinkedIn authorities** whose voices
+                                actually drive technical trust
+                                and procurement decisions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section reveal-on-scroll">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <span class="badge" style="margin-bottom: 16px;">THE VISIONARY</span>
+                    <h2 style="font-size: 40px; color: #fff; margin: 0;">Meet the Founder</h2>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Olgu Uysal -->
+                    <div class="team-card">
+                        <div class="team-image-wrapper">
+                            <img src="/team/olgu.jpg" alt="Olgu Uysal" class="team-image">
+                        </div>
+                        <div class="team-info">
+                            <span class="team-role">Founder</span>
+                            <h3>Olgu Uysal</h3>
+                            <p class="team-bio">A decade of experience in building marketing systems and influencer
+                                intelligence networks. Lead visionary behind NYRA.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="careers-cta-section container reveal-on-scroll">
+            <div class="careers-cta-card">
+                <div class="cta-content">
+                    <span class="badge" style="margin-bottom: 24px;">FUTURE NODES</span>
+                    <h2>Help us build the <span class="text-highlight-blue">foundations.</span></h2>
+                    <p>We are quietly mapping the invisible patterns of authority. If you resonate with our mission of
+                        bringing precision to influence, we'd love to connect.</p>
+                    <div style="margin-top: 40px;">
+                        <a href="/careers.html" class="btn-pill-primary">View Our Careers</a>
+                    </div>
+                </div>
+                <div class="cta-visual">
+                    <div class="visual-node"></div>
+                    <div class="visual-node"></div>
+                    <div class="visual-node"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">NYRA</span>
+                        <span class="logo-tagline">Authority Intelligence</span>
+                    </div>
+                    <p class="brand-desc">The authority intelligence layer for B2B. Map authority, forecast impact, and
+                        activate the voices that move your market.</p>
+                    <div class="social-links">
+                        <a href="#" class="footer-social-btn">Li</a>
+                        <a href="#" class="footer-social-btn">X</a>
+                        <a href="#" class="footer-social-btn">In</a>
+                    </div>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="nav-col">
+                        <h4>Platform</h4>
+                        <a href="/index.html#features">Features</a>
+
+                    </div>
+                    <div class="nav-col">
+                        <h4>Company</h4>
+                        <a href="/about.html" class="active">About Us</a>
+                        <a href="/faq.html">FAQ</a>
+                        <a href="/careers.html">Careers</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Contact</h4>
+                        <a href="/contact.html">General Contact</a>
+                        <a href="/agency-collab.html">Agency Solutions</a>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Stay Ahead</h4>
+                    <p>Join our newsletter for the latest B2B influence insights.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit" class="btn-icon">&rarr;</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 NYRA Intelligence. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- SEARCH MODAL -->
+    <div class="search-overlay" id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search for experts or insights..."
+                        autocomplete="off">
+                </div>
+                <button class="close-search" id="close-search">Esc</button>
+            </div>
+            <div class="search-results" id="search-results">
+                <div class="search-placeholder">
+                    <p>Type to search the Authority Graph™</p>
+                    <div class="search-suggestions">
+                        <span>Expert Discovery</span>
+
+                        <span>Insights</span>
+                        <span>Careers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | NYRA Intelligence</title>
+    <title>FAQ | NYRA Intelligence</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
 
@@ -17,36 +17,116 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="./style.css">
+    <style>
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary);
+            background: rgba(56, 189, 248, 0.03);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            gap: 20px;
+        }
+
+        .faq-question h3 {
+            color: #fff;
+            font-size: 18px;
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        .faq-item:hover .faq-question h3 {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            background: var(--primary);
+            color: #000;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .faq-answer-content {
+            padding: 24px 32px 32px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .faq-answer-content p {
+            margin: 0;
+        }
+
+        .text-highlight-blue {
+            color: var(--primary);
+            font-weight: 600;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Floating Header Container -->
-
-    <!-- Floating Header Container -->
-
-    <!-- Floating Header Container -->
-
-    <!-- Floating Header Container -->
-
-    <!-- Floating Header Container -->
-
-    <!-- Floating Header Container -->
-        
-    <!-- Floating Header Container -->
-        
-    <!-- Floating Header Container -->
     <header class="fixed-header-wrapper">
         <div class="nav-pill" id="main-nav">
             <!-- Logo -->
             <a href="/index.html" class="logo" style="text-decoration: none;">
                 <div class="logo-icon">
                     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 8V24L24 8V24" stroke="#050505" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="8" cy="8" r="2.5" fill="#050505"/>
-                        <circle cx="24" cy="24" r="2.5" fill="#050505"/>
-                        <circle cx="8" cy="24" r="2.5" fill="#050505"/>
-                        <circle cx="24" cy="8" r="2.5" fill="#050505"/>
+                        <path d="M8 8V24L24 8V24" stroke="#050505" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="8" cy="8" r="2.5" fill="#050505" />
+                        <circle cx="24" cy="24" r="2.5" fill="#050505" />
+                        <circle cx="8" cy="24" r="2.5" fill="#050505" />
+                        <circle cx="24" cy="8" r="2.5" fill="#050505" />
                     </svg>
                 </div>
                 <div class="logo-content">
@@ -57,14 +137,12 @@
 
             <!-- Center Navigation -->
             <nav class="nav-pill-menu">
-                <!-- Products (Old Solutions) -->
                 <div class="nav-item-dropdown">
                     <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
                         Products <span class="dropdown-arrow">▼</span>
                     </button>
-                    <!-- Mega Menu (Light Theme Adapted) -->
                     <div class="mega-menu">
-                         <div class="mega-menu-banner">
+                        <div class="mega-menu-banner">
                             ✨ New: <span>Authority Graph™ 2.0 is now live.</span> <a href="/index.html#news"
                                 style="color: var(--secondary); margin-left: 8px;">Explore the engine &rarr;</a>
                         </div>
@@ -79,11 +157,11 @@
                                     <h4>Platform Capabilities</h4>
                                 </div>
                                 <div class="grid-items">
-                                     <div class="grid-item">
+                                    <div class="grid-item">
                                         <div class="grid-item-icon">🔍</div>
                                         <div class="grid-item-text">
                                             <h5>Expert Discovery</h5>
-                                            <p>Map B2B content creators & KOLs.</p>
+                                            <p>Find authority figures by intent.</p>
                                         </div>
                                     </div>
                                     <div class="grid-item">
@@ -104,7 +182,7 @@
                                         <div class="grid-item-icon">🕸️</div>
                                         <div class="grid-item-text">
                                             <h5>Influence Mapping</h5>
-                                            <p>Map Digital Opinion Leaders (DOLs).</p>
+                                            <p>Visual network graphs.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -113,104 +191,15 @@
                     </div>
                 </div>
 
-                <!-- Solutions (Old Use Cases) -->
-                <div class="nav-item-dropdown">
-                    <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
-                        Solutions <span class="dropdown-arrow">▼</span>
-                    </button>
-                    <div class="mega-menu">
-                        <div class="mega-menu-container use-cases-layout">
-                             <div class="mega-menu-grid-content" style="width: 100%;">
-                                <div class="grid-header">
-                                    <h4>By Use Case</h4>
-                                </div>
-                                <div class="grid-items">
-                                    <a href="/solutions/awareness-reach.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">📢</div>
-                                            <div class="grid-item-text">
-                                                <h5>Awareness & Reach</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/product-review.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">🛠️</div>
-                                            <div class="grid-item-text">
-                                                <h5>Product Review</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/sales-partnership.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">🤝</div>
-                                            <div class="grid-item-text">
-                                                <h5>Sales Partnership</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/thought-leadership.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">💡</div>
-                                            <div class="grid-item-text">
-                                                <h5>Thought Leadership</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                     <a href="/solutions/market-education.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">📚</div>
-                                            <div class="grid-item-text">
-                                                <h5>Market Education</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/whitepaper-collab.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">📄</div>
-                                            <div class="grid-item-text">
-                                                <h5>Whitepaper Collab</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/reputation-trust.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">💎</div>
-                                            <div class="grid-item-text">
-                                                <h5>Reputation</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/brand-affinity.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">❤️</div>
-                                            <div class="grid-item-text">
-                                                <h5>Brand Affinity</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                     <a href="/solutions/event-amplification.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">🎟️</div>
-                                            <div class="grid-item-text">
-                                                <h5>Events</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Resources (New) -->
+
                 <div class="nav-item-dropdown">
                     <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
                         Resources <span class="dropdown-arrow">▼</span>
                     </button>
                     <div class="mega-menu mega-menu-resources">
                         <div class="mega-menu-container">
-                             <div class="mega-menu-grid-content" style="width: 100%;">
+                            <div class="mega-menu-grid-content" style="width: 100%;">
                                 <div class="grid-header">
                                     <h4>Learn & Connect</h4>
                                 </div>
@@ -233,15 +222,6 @@
                                             </div>
                                         </div>
                                     </a>
-                                     <a href="/contact.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">💼</div>
-                                            <div class="grid-item-text">
-                                                <h5>Contact Sales</h5>
-                                                <p>Enterprise solutions.</p>
-                                            </div>
-                                        </div>
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -252,59 +232,117 @@
             <!-- Right Actions -->
             <div class="nav-pill-actions">
                 <button class="action-search-btn" aria-label="Search">
-                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
                 </button>
-                <a href="/login.html" class="nav-action-link">Login</a>
-                <a href="javascript:void(0)" class="btn-pill-outline open-waitlist">Get a demo</a>
+                <a href="https://nyra-webservice-dev-kxi49.ondigitalocean.app/login" target="_blank"
+                    rel="noopener noreferrer" class="nav-action-link">Login</a>
                 <a href="javascript:void(0)" class="btn-pill-primary open-waitlist">Join Waitlist</a>
             </div>
 
-             <button class="nav-pill-mobile-toggle mobile-menu-btn" aria-label="Toggle Menu">
+            <button class="nav-pill-mobile-toggle mobile-menu-btn" aria-label="Toggle Menu">
                 <span class="bar">☰</span>
             </button>
         </div>
     </header>
 
     <main>
-        <section class="container" style="max-width: 800px; padding: 60px 20px 120px;">
+        <section class="container" style="max-width: 900px; padding: 60px 20px 120px;">
             <nav class="breadcrumbs">
                 <a href="/index.html">Home</a>
                 <span class="separator">/</span>
-                <span class="current">Privacy Policy</span>
+                <span class="current">FAQ</span>
             </nav>
 
-            <h1 style="font-size: 48px; margin: 32px 0 24px; color: #fff;">Privacy Policy</h1>
-            <p
-                style="color: var(--text-muted); margin-bottom: 48px; font-family: 'JetBrains Mono', monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">
-                Last Updated: January 12, 2026</p>
+            <div style="text-align: center; margin-bottom: 64px;">
+                <span class="badge" style="margin-bottom: 16px;">INTELLIGENCE DECODED</span>
+                <h1 style="font-size: 48px; margin: 0 0 24px; color: #fff;">Questions & Answers</h1>
+                <p style="color: var(--text-muted); margin: 0 auto; max-width: 600px; line-height: 1.6;">
+                    Everything you need to know about <span class="text-highlight-blue">NYRA</span>, our philosophy, and
+                    our foundational approach to B2B authority.</p>
+            </div>
 
-            <div style="color: var(--text-muted); line-height: 1.8; font-size: 16px;">
-                <h3 style="color: #fff; font-size: 22px; margin: 40px 0 20px;">1. Information We Collect</h3>
-                <p>We collect information you provide directly to us, such as when you create an account, sign up for
-                    our newsletter, or request a demo. This may include your name, email address, company name, and job
-                    title.</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>What is Authority Intelligence?</h3>
+                        <div class="faq-icon">▼</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Authority Intelligence is the systematic mapping and analysis of influence within
+                                specific B2B sectors. Unlike traditional influencer marketing, we bring engineering
+                                precision to **B2B influencer marketing**, focusing on <span
+                                    class="text-highlight-blue">technical trust</span> and intellectual resonance rather
+                                than vanity metrics like follower counts.</p>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 style="color: #fff; font-size: 22px; margin: 40px 0 20px;">2. How We Use Information</h3>
-                <p>We use the information we collect to provide, maintain, and improve our services, to process
-                    transactions, and to send you technical notices, updates, and support messages.</p>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>How does the Authority Graph™ work?</h3>
+                        <div class="faq-icon">▼</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Our engine maps millions of professional interactions, citations, and semantic
+                                connections to identify the true **Key Opinion Leaders (KOLs)** and **Digital Opinion
+                                Leaders (DOLs)** in any given market. It identifies not just who is loudest, but
+                                who is being listened to by decision-makers.</p>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 style="color: #fff; font-size: 22px; margin: 40px 0 20px;">3. Data Analytics</h3>
-                <p>We use third-party analytics services to help us understand how our website is used. These services
-                    may use cookies and similar technologies to collect information about your interactions with our
-                    site.</p>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>Is NYRA a database or a platform?</h3>
+                        <div class="faq-icon">▼</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>NYRA is an <span class="text-highlight-blue">intelligence layer</span>. While we possess
+                                deep data graphs, our value lies in the predictive analytics and activation workflows
+                                that help companies forecast the impact of their strategic messaging.</p>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 style="color: #fff; font-size: 22px; margin: 40px 0 20px;">4. Security</h3>
-                <p>We take reasonable measures to help protect information about you from loss, theft, misuse, and
-                    unauthorized access, disclosure, alteration, and destruction.</p>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>How do you ensure data privacy?</h3>
+                        <div class="faq-icon">▼</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We only analyze public professional data and strictly adhere to global privacy standards.
+                                We do not track personal user data or engage in invasive surveillance; our focus is on
+                                professional authority and public intellectual footprints.</p>
+                        </div>
+                    </div>
+                </div>
 
-                <h3 style="color: #fff; font-size: 22px; margin: 40px 0 20px;">5. Contact Us</h3>
-                <p>If you have any questions about this Privacy Policy, please contact us at <a
-                        href="mailto:privacy@usenyra.com"
-                        style="color: var(--primary); text-decoration: none;">privacy@usenyra.com</a>.</p>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <h3>How can I get access to the MVP?</h3>
+                        <div class="faq-icon">▼</div>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We are currently in a limited-access phase. You can join our waitlist via the <span
+                                    class="text-highlight-blue">"Join Waitlist"</span> button, and our team will reach
+                                out as we expand our foundational research cohorts.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
     </main>
+
+
 
     <footer class="footer-modern">
         <div class="container">
@@ -327,12 +365,12 @@
                     <div class="nav-col">
                         <h4>Platform</h4>
                         <a href="/index.html#features">Features</a>
-                        
+
                     </div>
                     <div class="nav-col">
                         <h4>Company</h4>
                         <a href="/about.html">About Us</a>
-                        <a href="/faq.html">FAQ</a>
+                        <a href="/faq.html" class="active">FAQ</a>
                         <a href="/careers.html">Careers</a>
                     </div>
                     <div class="nav-col">
@@ -362,7 +400,7 @@
         </div>
     </footer>
 
-    
+
     <!-- SEARCH MODAL -->
     <div class="search-overlay" id="search-modal">
         <div class="search-container">
@@ -382,7 +420,7 @@
                     <p>Type to search the Authority Graph™</p>
                     <div class="search-suggestions">
                         <span>Expert Discovery</span>
-                        
+
                         <span>Insights</span>
                         <span>Careers</span>
                     </div>

@@ -57,11 +57,71 @@
         }
 
         .form-card {
+            background: rgba(10, 10, 11, 0.8);
+            border: 1px solid var(--border-light);
+            border-radius: 32px;
+            padding: 48px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border-light);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 16px 20px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form-group input:hover,
+        .form-group textarea:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-submit-premium {
+            width: 100%;
+            padding: 18px;
+            border-radius: 14px;
+            border: none;
+            background: linear-gradient(135deg, var(--primary), #3b82f6);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 10px;
+            box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-submit-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 30px -10px rgba(56, 189, 248, 0.4);
+            filter: brightness(1.1);
         }
 
         .map-container {
@@ -98,7 +158,19 @@
 </head>
 
 <body>
-                        
+
+    <!-- Floating Header Container -->
+
+    <!-- Floating Header Container -->
+
+    <!-- Floating Header Container -->
+
+    <!-- Floating Header Container -->
+
+    <!-- Floating Header Container -->
+
+    <!-- Floating Header Container -->
+        
     <!-- Floating Header Container -->
         
     <!-- Floating Header Container -->
@@ -106,7 +178,19 @@
         <div class="nav-pill" id="main-nav">
             <!-- Logo -->
             <a href="/index.html" class="logo" style="text-decoration: none;">
-                <span class="logo-text">NYRA Influence Intelligence</span>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 8V24L24 8V24" stroke="#050505" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="8" cy="8" r="2.5" fill="#050505"/>
+                        <circle cx="24" cy="24" r="2.5" fill="#050505"/>
+                        <circle cx="8" cy="24" r="2.5" fill="#050505"/>
+                        <circle cx="24" cy="8" r="2.5" fill="#050505"/>
+                    </svg>
+                </div>
+                <div class="logo-content">
+                    <span class="logo-text">NYRA<span class="logo-accent">.</span></span>
+                    <span class="logo-tagline">Authority Intelligence</span>
+                </div>
             </a>
 
             <!-- Center Navigation -->
@@ -137,7 +221,7 @@
                                         <div class="grid-item-icon">🔍</div>
                                         <div class="grid-item-text">
                                             <h5>Expert Discovery</h5>
-                                            <p>Find authority figures by intent.</p>
+                                            <p>Map B2B content creators & KOLs.</p>
                                         </div>
                                     </div>
                                     <div class="grid-item">
@@ -158,7 +242,7 @@
                                         <div class="grid-item-icon">🕸️</div>
                                         <div class="grid-item-text">
                                             <h5>Influence Mapping</h5>
-                                            <p>Visual network graphs.</p>
+                                            <p>Map Digital Opinion Leaders (DOLs).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +346,7 @@
                     <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
                         Resources <span class="dropdown-arrow">▼</span>
                     </button>
-                    <div class="mega-menu" style="min-width: 600px; width: 600px;">
+                    <div class="mega-menu mega-menu-resources">
                         <div class="mega-menu-container">
                              <div class="mega-menu-grid-content" style="width: 100%;">
                                 <div class="grid-header">
@@ -275,15 +359,6 @@
                                             <div class="grid-item-text">
                                                 <h5>Insights Blog</h5>
                                                 <p>Latest trends in authority.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/api.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">⚙️</div>
-                                            <div class="grid-item-text">
-                                                <h5>API Documentation</h5>
-                                                <p>Build on our engine.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -317,7 +392,7 @@
                 <button class="action-search-btn" aria-label="Search">
                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </button>
-                <a href="https://nyra-webservice-dev-kxi49.ondigitalocean.app/login" class="nav-action-link">Login</a>
+                <a href="/login.html" class="nav-action-link">Login</a>
                 <a href="javascript:void(0)" class="btn-pill-outline open-waitlist">Get a demo</a>
                 <a href="javascript:void(0)" class="btn-pill-primary open-waitlist">Join Waitlist</a>
             </div>
@@ -382,32 +457,32 @@
             <!-- Contact Form -->
             <div class="form-card">
                 <form id="contact-page-form" onsubmit="event.preventDefault(); alert('Message sent!');">
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label
-                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Name</label>
-                        <input type="text"
-                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
-                            required placeholder="Your Name">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" required placeholder="Your Name">
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label
-                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Email</label>
-                        <input type="email"
-                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
-                            required placeholder="work@email.com">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required placeholder="work@email.com">
                     </div>
 
-                    <div class="form-group" style="margin-bottom: 20px;">
-                        <label
-                            style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 14px;">Message</label>
-                        <textarea rows="4"
-                            style="width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); padding: 12px; border-radius: 8px; color: #fff;"
-                            required placeholder="How can we help?"></textarea>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="4" required placeholder="How can we help?"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">Send Message</button>
+                    <button type="submit" class="btn-submit-premium">Send Message</button>
                 </form>
+
+                <div
+                    style="margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border-light); text-align: center;">
+                    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">Managing multiple client
+                        accounts?</p>
+                    <a href="/agency-collab.html"
+                        style="color: var(--primary); font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; gap: 8px;">Explore
+                        our Agency Collab Model &rarr;</a>
+                </div>
             </div>
         </div>
         <!-- PRE-FOOTER REVEAL -->
@@ -429,9 +504,9 @@
                 <div class="footer-brand">
                     <div class="logo">
                         <span class="logo-text">NYRA</span>
-                        <span class="logo-tagline">Influence Intelligence</span>
+                        <span class="logo-tagline">Authority Intelligence</span>
                     </div>
-                    <p class="brand-desc">The influence intelligence layer for B2B. Map authority, forecast impact, and
+                    <p class="brand-desc">The authority intelligence layer for B2B. Map authority, forecast impact, and
                         activate the voices that move your market.</p>
                     <div class="social-links">
                         <a href="#" class="footer-social-btn">Li</a>
@@ -442,17 +517,20 @@
 
                 <div class="footer-nav">
                     <div class="nav-col">
-                        <h4>Product</h4>
-                        <a href="/index.html#solutions">Features</a>
-                        <a href="/use-cases.html">Use Cases</a>
-                        <a href="/api.html">API Access</a>
+                        <h4>Platform</h4>
+                        <a href="/index.html#features">Features</a>
+                        
                     </div>
                     <div class="nav-col">
                         <h4>Company</h4>
-                        <a href="#">About Us</a>
+                        <a href="/about.html">About Us</a>
+                        <a href="/faq.html">FAQ</a>
                         <a href="/careers.html">Careers</a>
-                        <a href="#">Blog</a>
-                        <a href="mailto:olgu@usenyra.com">Contact</a>
+                    </div>
+                    <div class="nav-col">
+                        <h4>Contact</h4>
+                        <a href="/contact.html" class="active">General Contact</a>
+                        <a href="/agency-collab.html">Agency Solutions</a>
                     </div>
                 </div>
 
@@ -475,6 +553,35 @@
             </div>
         </div>
     </footer>
+
+    
+    <!-- SEARCH MODAL -->
+    <div class="search-overlay" id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search for experts or insights..."
+                        autocomplete="off">
+                </div>
+                <button class="close-search" id="close-search">Esc</button>
+            </div>
+            <div class="search-results" id="search-results">
+                <div class="search-placeholder">
+                    <p>Type to search the Authority Graph™</p>
+                    <div class="search-suggestions">
+                        <span>Expert Discovery</span>
+                        
+                        <span>Insights</span>
+                        <span>Careers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="./main.js"></script>
 </body>

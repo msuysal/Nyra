@@ -3,8 +3,8 @@ import os
 import re
 
 files_to_update = [
-    'index.html', 'use-cases.html', 'careers.html', 'contact.html',
-    'api.html', 'insights.html', 'privacy.html', '404.html',
+    'index.html', 'use-cases.html', 'careers.html', 'contact.html', 'login.html',
+    'insights.html', 'privacy.html', '404.html',
     'post.html',
     'solutions/awareness-reach.html',
     'solutions/product-review.html',
@@ -24,7 +24,19 @@ gold_header = """
         <div class="nav-pill" id="main-nav">
             <!-- Logo -->
             <a href="/index.html" class="logo" style="text-decoration: none;">
-                <span class="logo-text">NYRA Influence Intelligence</span>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 8V24L24 8V24" stroke="#050505" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="8" cy="8" r="2.5" fill="#050505"/>
+                        <circle cx="24" cy="24" r="2.5" fill="#050505"/>
+                        <circle cx="8" cy="24" r="2.5" fill="#050505"/>
+                        <circle cx="24" cy="8" r="2.5" fill="#050505"/>
+                    </svg>
+                </div>
+                <div class="logo-content">
+                    <span class="logo-text">NYRA<span class="logo-accent">.</span></span>
+                    <span class="logo-tagline">Authority Intelligence</span>
+                </div>
             </a>
 
             <!-- Center Navigation -->
@@ -55,7 +67,7 @@ gold_header = """
                                         <div class="grid-item-icon">🔍</div>
                                         <div class="grid-item-text">
                                             <h5>Expert Discovery</h5>
-                                            <p>Find authority figures by intent.</p>
+                                            <p>Map B2B content creators & KOLs.</p>
                                         </div>
                                     </div>
                                     <div class="grid-item">
@@ -76,7 +88,7 @@ gold_header = """
                                         <div class="grid-item-icon">🕸️</div>
                                         <div class="grid-item-text">
                                             <h5>Influence Mapping</h5>
-                                            <p>Visual network graphs.</p>
+                                            <p>Map Digital Opinion Leaders (DOLs).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -180,7 +192,7 @@ gold_header = """
                     <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
                         Resources <span class="dropdown-arrow">▼</span>
                     </button>
-                    <div class="mega-menu" style="min-width: 600px; width: 600px;">
+                    <div class="mega-menu mega-menu-resources">
                         <div class="mega-menu-container">
                              <div class="mega-menu-grid-content" style="width: 100%;">
                                 <div class="grid-header">
@@ -193,15 +205,6 @@ gold_header = """
                                             <div class="grid-item-text">
                                                 <h5>Insights Blog</h5>
                                                 <p>Latest trends in authority.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/api.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">⚙️</div>
-                                            <div class="grid-item-text">
-                                                <h5>API Documentation</h5>
-                                                <p>Build on our engine.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -235,7 +238,7 @@ gold_header = """
                 <button class="action-search-btn" aria-label="Search">
                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </button>
-                <a href="https://nyra-webservice-dev-kxi49.ondigitalocean.app/login" class="nav-action-link">Login</a>
+                <a href="/login.html" class="nav-action-link">Login</a>
                 <a href="javascript:void(0)" class="btn-pill-outline open-waitlist">Get a demo</a>
                 <a href="javascript:void(0)" class="btn-pill-primary open-waitlist">Join Waitlist</a>
             </div>

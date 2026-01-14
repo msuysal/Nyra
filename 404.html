@@ -4,9 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 | NYRA Intelligence</title>
-    <link rel="stylesheet" href="/style.css">
+    <title>Lost in the Graph | NYRA Intelligence</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
     <style>
         body {
             display: flex;
@@ -16,56 +25,195 @@
             overflow: hidden;
             flex-direction: column;
             text-align: center;
+            background: #020202;
+            margin: 0;
+            cursor: default;
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
         }
 
         .error-code {
-            font-size: clamp(100px, 20vw, 200px);
-            font-weight: 700;
+            font-size: clamp(80px, 15vw, 160px);
+            font-weight: 800;
             font-family: 'Space Grotesk', sans-serif;
-            background: linear-gradient(135deg, #fff 0%, var(--text-muted) 100%);
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
             line-height: 1;
-            margin-bottom: 24px;
-            opacity: 0.8;
+            margin-bottom: 8px;
+            letter-spacing: -4px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .witty-headline {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 16px;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .error-msg {
-            font-size: 24px;
+            font-size: 18px;
             color: var(--text-muted);
-            margin-bottom: 48px;
+            margin-bottom: 40px;
             max-width: 500px;
+            line-height: 1.6;
         }
 
-        .glitch-wrapper {
+        .back-btn {
             position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: var(--primary);
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            overflow: hidden;
         }
 
-        /* Simple glow element */
-        .glow-bg {
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+
+        .back-btn span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .bg-network {
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-            opacity: 0.1;
-            z-index: -1;
-            filter: blur(80px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* Cute animated node */
+        .cute-node {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 32px;
+            filter: drop-shadow(0 0 15px var(--primary-glow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            animation: bounce 2s bounce infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .radar {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            border-radius: 50%;
+            animation: pulse 4s linear infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="glow-bg"></div>
-
-    <div class="glitch-wrapper">
-        <div class="error-code">404</div>
+    <div class="bg-network">
+        <div class="radar" style="top: 50%; left: 50%; translate: -50% -50%;"></div>
+        <div class="radar" style="top: 50%; left: 50%; translate: -50% -50%; animation-delay: 2s;"></div>
     </div>
 
-    <h2>Signal Lost</h2>
-    <p class="error-msg">The intelligence node you are looking for has been disconnected or does not exist.</p>
+    <div class="error-container">
+        <div class="cute-node" title="Just a lost bit of influence">📡</div>
+        <div class="error-code">404</div>
+        <h2 class="witty-headline">Lost in the Influence Graph.</h2>
+        <p class="error-msg">Even our high-authority crawlers can't find this node. It either hasn't established its
+            influence yet, or it's gone strictly incognito.</p>
 
-    <a href="/" class="btn btn-primary">Reconnect to Main Feed</a>
+        <a href="/index.html" class="back-btn">
+            <span>&larr; Reconnect to Reality</span>
+        </a>
+    </div>
+
+
+
+    <!-- SEARCH MODAL -->
+    <div class="search-overlay" id="search-modal">
+        <div class="search-container">
+            <div class="search-header">
+                <div class="search-input-wrapper">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search for experts or insights..."
+                        autocomplete="off">
+                </div>
+                <button class="close-search" id="close-search">Esc</button>
+            </div>
+            <div class="search-results" id="search-results">
+                <div class="search-placeholder">
+                    <p>Type to search the Authority Graph™</p>
+                    <div class="search-suggestions">
+                        <span>Expert Discovery</span>
+                        
+                        <span>Insights</span>
+                        <span>Careers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
