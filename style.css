@@ -3529,21 +3529,19 @@ select:focus {
 
 .nav-pill {
     pointer-events: auto;
-    background: rgba(10, 11, 16, 0.85);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: #ffffff;
     width: calc(100% - 40px);
     max-width: 1200px;
     border-radius: 20px;
     margin-top: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #e2e8f0;
     box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.05);
+        0 10px 40px -10px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 24px;
+    padding: 0 32px;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     height: 72px;
 }
@@ -3551,20 +3549,23 @@ select:focus {
 .fixed-header-wrapper.scrolled .nav-pill {
     margin-top: 10px;
     height: 64px;
-    background: rgba(8, 9, 15, 0.95);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     width: calc(100% - 80px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 /* Light Mode Overrides for Header Context */
 .nav-pill .logo-text {
-    color: #fff;
+    color: #0f172a;
     font-size: 24px;
     letter-spacing: -0.02em;
 }
 
 .nav-pill .logo-tagline {
     font-size: 9px;
-    color: var(--text-muted);
+    color: #64748b;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -3580,7 +3581,7 @@ select:focus {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
     font-size: 14px;
-    color: var(--text-muted);
+    color: #475569;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -3590,8 +3591,7 @@ select:focus {
 
 .nav-pill-link:hover,
 .nav-pill-link.active {
-    color: #fff;
-    text-shadow: 0 0 15px var(--primary-glow);
+    color: #0f172a;
 }
 
 .nav-pill-link .dropdown-arrow {
@@ -3673,71 +3673,72 @@ select:focus {
 
 /* Dark Overlay for body when menu is open? Maybe later */
 
-/* Mega Menu High-End Overrides */
+/* Mega Menu Premium Light Overrides */
 .mega-menu {
     top: calc(100% + 12px);
-    background: rgba(10, 11, 16, 0.95);
-    backdrop-filter: blur(40px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    backdrop-filter: blur(20px);
+    border: 1px solid #e2e8f0;
     box-shadow:
-        0 40px 100px -20px rgba(0, 0, 0, 0.8),
-        inset 0 0 40px rgba(56, 189, 248, 0.05);
-    color: #fff;
+        0 30px 60px -12px rgba(0, 0, 0, 0.15),
+        0 18px 36px -18px rgba(0, 0, 0, 0.1);
+    color: #0f172a;
     border-radius: 24px;
 }
 
 .mega-menu-banner {
-    background: linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--primary);
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    color: #64748b;
 }
 
 .mega-menu-sidebar {
-    background: rgba(255, 255, 255, 0.02);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    background: #fcfcfc;
+    border-right: 1px solid #f1f5f9;
 }
 
 .mega-menu-sidebar .sidebar-item {
-    color: var(--text-muted);
+    color: #64748b;
 }
 
 .mega-menu-sidebar .sidebar-item:hover,
 .mega-menu-sidebar .sidebar-item.active {
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
+    background: #f1f5f9;
+    color: #0f172a;
 }
 
 .grid-item-text h5 {
-    color: #fff;
+    color: #0f172a;
     font-weight: 600;
 }
 
 .grid-item-text p {
-    color: var(--text-muted);
+    color: #64748b;
 }
 
 .grid-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
 }
 
 .grid-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--primary);
+    background: #f8fafc;
+    border-color: #e2e8f0;
     transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
 }
 
 .mega-menu-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    background: rgba(255, 255, 255, 0.01);
+    border-top: 1px solid #f1f5f9;
+    background: #fcfcfc;
 }
 
 .footer-action {
-    color: var(--text-muted);
+    color: #64748b;
 }
 
 .footer-action:hover {
-    color: #fff;
+    color: #0f172a;
 }
 
 /* Mobile Responsiveness for Pill */
