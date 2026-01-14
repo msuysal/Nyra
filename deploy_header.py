@@ -3,19 +3,9 @@ import os
 import re
 
 files_to_update = [
-    'index.html', 'use-cases.html', 'careers.html', 'contact.html', 'login.html',
+    'index.html', 'careers.html', 'contact.html', 'login.html',
     'insights.html', 'privacy.html', '404.html',
-    'post.html',
-    'solutions/awareness-reach.html',
-    'solutions/product-review.html',
-    'solutions/sales-partnership.html',
-    'solutions/thought-leadership.html',
-    'solutions/technical-trust.html',
-    'solutions/market-education.html',
-    'solutions/whitepaper-collab.html',
-    'solutions/reputation-trust.html',
-    'solutions/brand-affinity.html',
-    'solutions/event-amplification.html'
+    'post.html', 'about.html', 'faq.html', 'agency-collab.html', 'terms.html'
 ]
 
 gold_header = """    
@@ -41,12 +31,11 @@ gold_header = """
 
             <!-- Center Navigation -->
             <nav class="nav-pill-menu">
-                <!-- Products (Old Solutions) -->
+                <!-- Platform Mega Menu -->
                 <div class="nav-item-dropdown">
                     <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
-                        Products <span class="dropdown-arrow">▼</span>
+                        Platform <span class="dropdown-arrow">▼</span>
                     </button>
-                    <!-- Mega Menu (Light Theme Adapted) -->
                     <div class="mega-menu">
                          <div class="mega-menu-banner">
                             ✨ New: <span>Authority Graph™ 2.0 is now live.</span> <a href="/index.html#news"
@@ -54,41 +43,47 @@ gold_header = """
                         </div>
                         <div class="mega-menu-container">
                             <aside class="mega-menu-sidebar">
-                                <div class="sidebar-category">Core Platform</div>
-                                <div class="sidebar-item active">Intel Engine <i>&rarr;</i></div>
-                                <div class="sidebar-item">Predictive Graph <i>&rarr;</i></div>
+                                <div class="sidebar-category">Core Engine</div>
+                                <div class="sidebar-item active">
+                                    <span>Intel Engine</span>
+                                    <i class="item-desc">Real-time authority tracking</i>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span>Predictive Graph</span>
+                                    <i class="item-desc">AI-driven impact forecasting</i>
+                                </div>
                             </aside>
                             <div class="mega-menu-grid-content">
                                 <div class="grid-header">
-                                    <h4>Platform Capabilities</h4>
+                                    <h4>Capabilities</h4>
                                 </div>
                                 <div class="grid-items">
                                      <div class="grid-item">
                                         <div class="grid-item-icon">🔍</div>
                                         <div class="grid-item-text">
                                             <h5>Expert Discovery</h5>
-                                            <p>Map B2B content creators & KOLs.</p>
+                                            <p>Map B2B content creators & KOLs by intent.</p>
                                         </div>
                                     </div>
                                     <div class="grid-item">
                                         <div class="grid-item-icon">📈</div>
                                         <div class="grid-item-text">
-                                            <h5>Velocity Forecasting</h5>
-                                            <p>Predict message travel speed.</p>
+                                            <h5>Impact Forecasting</h5>
+                                            <p>Predict message travel and resonance.</p>
                                         </div>
                                     </div>
                                     <div class="grid-item">
                                         <div class="grid-item-icon">🛡️</div>
                                         <div class="grid-item-text">
-                                            <h5>Intelligence Guard</h5>
-                                            <p>Market-value audits.</p>
+                                            <h5>Authority Audit</h5>
+                                            <p>Technical trust & market-value validation.</p>
                                         </div>
                                     </div>
                                     <div class="grid-item">
                                         <div class="grid-item-icon">🕸️</div>
                                         <div class="grid-item-text">
                                             <h5>Influence Mapping</h5>
-                                            <p>Map Digital Opinion Leaders (DOLs).</p>
+                                            <p>Visualizing DOL networks and nodes.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -97,97 +92,7 @@ gold_header = """
                     </div>
                 </div>
 
-                <!-- Solutions (Old Use Cases) -->
-                <div class="nav-item-dropdown">
-                    <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
-                        Solutions <span class="dropdown-arrow">▼</span>
-                    </button>
-                    <div class="mega-menu">
-                        <div class="mega-menu-container use-cases-layout">
-                             <div class="mega-menu-grid-content" style="width: 100%;">
-                                <div class="grid-header">
-                                    <h4>By Use Case</h4>
-                                </div>
-                                <div class="grid-items">
-                                    <a href="/solutions/awareness-reach.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">📢</div>
-                                            <div class="grid-item-text">
-                                                <h5>Awareness & Reach</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/product-review.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">🛠️</div>
-                                            <div class="grid-item-text">
-                                                <h5>Product Review</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/sales-partnership.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">🤝</div>
-                                            <div class="grid-item-text">
-                                                <h5>Sales Partnership</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/thought-leadership.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">💡</div>
-                                            <div class="grid-item-text">
-                                                <h5>Thought Leadership</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                     <a href="/solutions/market-education.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">📚</div>
-                                            <div class="grid-item-text">
-                                                <h5>Market Education</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/whitepaper-collab.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">📄</div>
-                                            <div class="grid-item-text">
-                                                <h5>Whitepaper Collab</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/reputation-trust.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">💎</div>
-                                            <div class="grid-item-text">
-                                                <h5>Reputation</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="/solutions/brand-affinity.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">❤️</div>
-                                            <div class="grid-item-text">
-                                                <h5>Brand Affinity</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                     <a href="/solutions/event-amplification.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">🎟️</div>
-                                            <div class="grid-item-text">
-                                                <h5>Events</h5>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Resources (New) -->
+                <!-- Resources Mega Menu -->
                 <div class="nav-item-dropdown">
                     <button class="nav-pill-link mobile-dropdown-btn" aria-expanded="false">
                         Resources <span class="dropdown-arrow">▼</span>
@@ -196,7 +101,7 @@ gold_header = """
                         <div class="mega-menu-container">
                              <div class="mega-menu-grid-content" style="width: 100%;">
                                 <div class="grid-header">
-                                    <h4>Learn & Connect</h4>
+                                    <h4>Company & Insights</h4>
                                 </div>
                                 <div class="grid-items col-2">
                                     <a href="/insights.html" class="grid-item-link">
@@ -204,7 +109,25 @@ gold_header = """
                                             <div class="grid-item-icon">📰</div>
                                             <div class="grid-item-text">
                                                 <h5>Insights Blog</h5>
-                                                <p>Latest trends in authority.</p>
+                                                <p>Latest trends in B2B authority.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/about.html" class="grid-item-link">
+                                        <div class="grid-item">
+                                            <div class="grid-item-icon">🏢</div>
+                                            <div class="grid-item-text">
+                                                <h5>About Us</h5>
+                                                <p>Our mission and the team behind NYRA.</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/faq.html" class="grid-item-link">
+                                        <div class="grid-item">
+                                            <div class="grid-item-icon">❓</div>
+                                            <div class="grid-item-text">
+                                                <h5>FAQ</h5>
+                                                <p>Common questions about the platform.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -213,16 +136,7 @@ gold_header = """
                                             <div class="grid-item-icon">📞</div>
                                             <div class="grid-item-text">
                                                 <h5>Contact Support</h5>
-                                                <p>Get help with your account.</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                     <a href="/contact.html" class="grid-item-link">
-                                        <div class="grid-item">
-                                            <div class="grid-item-icon">💼</div>
-                                            <div class="grid-item-text">
-                                                <h5>Contact Sales</h5>
-                                                <p>Enterprise solutions.</p>
+                                                <p>Get help with your account or demo.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -238,8 +152,7 @@ gold_header = """
                 <button class="action-search-btn" aria-label="Search">
                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 </button>
-                <a href="/login.html" class="nav-action-link">Login</a>
-                <a href="javascript:void(0)" class="btn-pill-outline open-waitlist">Get a demo</a>
+                <a href="https://nyra-webservice-dev-kxi49.ondigitalocean.app/login" target="_blank" rel="noopener noreferrer" class="nav-action-link">Login</a>
                 <a href="javascript:void(0)" class="btn-pill-primary open-waitlist">Join Waitlist</a>
             </div>
 
@@ -266,9 +179,6 @@ for file_name in files_to_update:
             
         if header_pattern.search(content):
             new_content = header_pattern.sub(gold_header, content)
-            
-            # Double check: if use-cases page has 'class="active"', we might want to preserve it,
-            # but simpler to just standardize for now as dropdowns don't show active state usually.
             
             with open(path, 'w') as f:
                 f.write(new_content)
