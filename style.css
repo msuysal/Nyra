@@ -527,6 +527,14 @@ ul {
     color: var(--primary);
 }
 
+.grid-content-section {
+    display: none;
+}
+
+.grid-content-section.active {
+    display: block;
+}
+
 .mega-menu-grid-content {
     padding: 32px;
 }
