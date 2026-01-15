@@ -544,6 +544,13 @@ ul {
     color: #0f172a;
     font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 4px;
+}
+
+.grid-header p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.4;
 }
 
 .grid-header {
