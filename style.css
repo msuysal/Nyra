@@ -427,7 +427,7 @@ ul {
 }
 
 .mega-menu-banner span {
-    color: var(--text-muted);
+    color: #64748b;
 }
 
 .mega-menu-container {
@@ -466,35 +466,38 @@ ul {
 .sidebar-category {
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: #64748b;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    font-weight: 800;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .sidebar-item {
     display: flex;
     flex-direction: column;
-    padding: 14px 20px;
-    color: #64748b;
+    padding: 16px 24px;
+    color: #475569;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 12px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     position: relative;
     border: 1px solid transparent;
 }
 
 .sidebar-item:hover {
-    background: rgba(148, 163, 184, 0.08);
-    color: #1e293b;
+    background: #f1f5f9;
+    color: #0f172a;
 }
 
 .sidebar-item.active {
     background: #ffffff;
     border-color: #e2e8f0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03);
     color: #0f172a;
 }
 
@@ -504,27 +507,29 @@ ul {
     left: 0;
     top: 20%;
     height: 60%;
-    width: 3px;
+    width: 4px;
     background: var(--primary);
     border-radius: 0 4px 4px 0;
 }
 
 .sidebar-item span {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     margin-bottom: 2px;
+    letter-spacing: -0.01em;
 }
 
 .item-desc {
-    font-size: 11px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 500;
     font-style: normal;
-    color: #94a3b8;
+    color: #64748b;
     font-family: 'Inter', sans-serif;
+    line-height: 1.4;
 }
 
 .sidebar-item.active .item-desc {
-    color: var(--primary);
+    color: #334155;
 }
 
 .grid-content-section {
@@ -549,8 +554,8 @@ ul {
 
 .grid-header p {
     font-size: 14px;
-    color: #64748b;
-    line-height: 1.4;
+    color: #475569;
+    line-height: 1.5;
 }
 
 .grid-header {
@@ -621,7 +626,7 @@ ul {
 
 .grid-item-text p {
     font-size: 13px;
-    color: #64748b;
+    color: #475569;
     line-height: 1.5;
 }
 
