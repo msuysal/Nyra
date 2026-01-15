@@ -440,6 +440,10 @@ ul {
     min-height: auto;
 }
 
+.mega-menu-container.solutions-layout {
+    grid-template-columns: 240px 580px 340px;
+}
+
 .mega-menu-resources .mega-menu-container {
     display: block;
     width: 680px;
