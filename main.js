@@ -174,10 +174,7 @@ dropdowns.forEach(dropdown => {
 });
 
 // Mega Menu Sidebar Interaction
-document.addEventListener('click', (e) => {
-    const sidebarItem = e.target.closest('.sidebar-item');
-    if (!sidebarItem) return;
-
+const handleSidebarSwitch = (sidebarItem) => {
     const container = sidebarItem.closest('.mega-menu-container');
     if (!container) return;
 
@@ -187,8 +184,10 @@ document.addEventListener('click', (e) => {
     // Update active sidebar item
     container.querySelectorAll('.sidebar-item').forEach(item => {
         item.classList.remove('active');
+        item.setAttribute('aria-selected', 'false');
     });
     sidebarItem.classList.add('active');
+    sidebarItem.setAttribute('aria-selected', 'true');
 
     // Update active content section
     container.querySelectorAll('.grid-content-section').forEach(section => {
@@ -198,6 +197,20 @@ document.addEventListener('click', (e) => {
     const targetSection = container.querySelector(`#${contentId}`);
     if (targetSection) {
         targetSection.classList.add('active');
+    }
+};
+
+document.addEventListener('mouseover', (e) => {
+    const sidebarItem = e.target.closest('.sidebar-item');
+    if (sidebarItem) {
+        handleSidebarSwitch(sidebarItem);
+    }
+});
+
+document.addEventListener('click', (e) => {
+    const sidebarItem = e.target.closest('.sidebar-item');
+    if (sidebarItem) {
+        handleSidebarSwitch(sidebarItem);
     }
 });
 

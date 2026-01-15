@@ -82,19 +82,19 @@
                                 style="color: var(--secondary); margin-left: 8px;">Explore engine &rarr;</a>
                         </div>
                         <div class="mega-menu-container">
-                            <aside class="mega-menu-sidebar">
-                                <div class="sidebar-item active" data-content="nav-product-overview">
+                            <aside class="mega-menu-sidebar" role="tablist">
+                                <div class="sidebar-item active" role="tab" aria-selected="true" data-content="nav-product-overview">
                                     <span>Platform</span>
                                     <i class="item-desc">Precision mapping</i>
                                 </div>
-                                <div class="sidebar-item" data-content="nav-product-insights">
+                                <div class="sidebar-item" role="tab" aria-selected="false" data-content="nav-product-insights">
                                     <span>Data Solutions</span>
                                     <i class="item-desc">Market signals</i>
                                 </div>
                             </aside>
                             <div class="mega-menu-grid-content">
                                 <!-- Section: Product Overview -->
-                                <div class="grid-content-section active" id="nav-product-overview">
+                                <div class="grid-content-section active" role="tabpanel" id="nav-product-overview">
                                     <div class="grid-header">
                                         <h4>Authority Intelligence</h4>
                                         <p>Scientific mapping of network relationships and influence velocity.</p>
@@ -132,7 +132,7 @@
                                 </div>
 
                                 <!-- Section: Insights -->
-                                <div class="grid-content-section" id="nav-product-insights">
+                                <div class="grid-content-section" role="tabpanel" id="nav-product-insights">
                                     <div class="grid-header">
                                         <h4>Data Solutions</h4>
                                         <p>Perspectives on market trends and community dynamics.</p>
@@ -179,23 +179,23 @@
                     </button>
                     <div class="mega-menu">
                         <div class="mega-menu-container solutions-layout">
-                            <aside class="mega-menu-sidebar">
-                                <div class="sidebar-item active" data-content="nav-solutions-startups">
+                            <aside class="mega-menu-sidebar" role="tablist">
+                                <div class="sidebar-item active" role="tab" aria-selected="true" data-content="nav-solutions-startups">
                                     <span>For Startups</span>
                                     <i class="item-desc">Move fast, prove impact</i>
                                 </div>
-                                <div class="sidebar-item" data-content="nav-solutions-enterprises">
+                                <div class="sidebar-item" role="tab" aria-selected="false" data-content="nav-solutions-enterprises">
                                     <span>For Enterprises</span>
                                     <i class="item-desc">Scale & de-risk global</i>
                                 </div>
-                                <div class="sidebar-item" data-content="nav-solutions-agencies">
+                                <div class="sidebar-item" role="tab" aria-selected="false" data-content="nav-solutions-agencies">
                                     <span>For Agencies</span>
                                     <i class="item-desc">Strategy & data</i>
                                 </div>
                             </aside>
                             <div class="mega-menu-grid-content">
                                 <!-- Startups -->
-                                <div class="grid-content-section active" id="nav-solutions-startups">
+                                <div class="grid-content-section active" role="tabpanel" id="nav-solutions-startups">
                                     <div class="grid-header">
                                         <h4>Authority for Startups</h4>
                                         <p>Identify early nodes and maximize small-team impact.</p>
@@ -219,7 +219,7 @@
                                 </div>
                                 
                                 <!-- Enterprises -->
-                                <div class="grid-content-section" id="nav-solutions-enterprises">
+                                <div class="grid-content-section" role="tabpanel" id="nav-solutions-enterprises">
                                     <div class="grid-header">
                                         <h4>Enterprise Intelligence</h4>
                                         <p>Maximize ROI by standardizing high-spend operations.</p>
@@ -250,7 +250,7 @@
                                 </div>
 
                                 <!-- Agencies -->
-                                <div class="grid-content-section" id="nav-solutions-agencies">
+                                <div class="grid-content-section" role="tabpanel" id="nav-solutions-agencies">
                                     <div class="grid-header">
                                         <h4>Agency Performance</h4>
                                         <p>Elevate strategies and justify value with precision data.</p>
