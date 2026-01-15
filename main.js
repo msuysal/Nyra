@@ -173,6 +173,34 @@ dropdowns.forEach(dropdown => {
     }
 });
 
+// Mega Menu Sidebar Interaction
+document.addEventListener('click', (e) => {
+    const sidebarItem = e.target.closest('.sidebar-item');
+    if (!sidebarItem) return;
+
+    const container = sidebarItem.closest('.mega-menu-container');
+    if (!container) return;
+
+    const contentId = sidebarItem.getAttribute('data-content');
+    if (!contentId) return;
+
+    // Update active sidebar item
+    container.querySelectorAll('.sidebar-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    sidebarItem.classList.add('active');
+
+    // Update active content section
+    container.querySelectorAll('.grid-content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    const targetSection = container.querySelector(`#${contentId}`);
+    if (targetSection) {
+        targetSection.classList.add('active');
+    }
+});
+
 // Industry Cards Scroll Animation
 const industriesSection = document.querySelector('.industries-expand');
 const industryCards = document.querySelectorAll('.industry-card');
