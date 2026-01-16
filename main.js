@@ -347,11 +347,11 @@ const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
 
 const siteContent = [
-    { title: 'Expert Discovery', description: 'Find B2B content creators, LinkedIn authorities, and KOLs.', url: '/index.html#features' },
+    { title: 'Decision Mapping', description: 'Find B2B content creators, experts, and decision nodes.', url: '/index.html#features' },
     { title: 'Velocity Forecasting', description: 'Predict message travel speed.', url: '/index.html#features' },
     { title: 'Intelligence Guard', description: 'Market-value audits.', url: '/index.html#features' },
-    { title: 'Influence Mapping', description: 'Map Digital Opinion Leaders (DOLs) and thought leaders.', url: '/index.html#features' },
-    { title: 'Insights Blog', description: 'Latest trends in authority.', url: '/insights.html' },
+    { title: 'Decision Mapping', description: 'Map Expert Networks and thought leaders.', url: '/index.html#features' },
+    { title: 'Insights Blog', description: 'Latest trends in decision logic.', url: '/insights.html' },
     { title: 'About Us', description: 'Our mission and vision.', url: '/about.html' },
     { title: 'Careers', description: 'Join our team.', url: '/careers.html' },
     { title: 'FAQ', description: 'Common questions.', url: '/faq.html' },
@@ -391,9 +391,9 @@ if (searchModal && searchBtn) {
         if (!query) {
             searchResults.innerHTML = `
                 <div class="search-placeholder">
-                    <p>Type to search the Authority Graph™</p>
+                    <p>Type to search the Decision Engine</p>
                     <div class="search-suggestions">
-                        ${['Expert Discovery', 'KOLs', 'LinkedIn', 'B2B Marketing'].map(s => `<span class="suggestion-chip">${s}</span>`).join('')}
+                        ${['Decision Mapping', 'Experts', 'LinkedIn', 'B2B Strategy'].map(s => `<span class="suggestion-chip">${s}</span>`).join('')}
                     </div>
                 </div>
             `;

@@ -25,7 +25,7 @@ gold_header = """
                 </div>
                 <div class="logo-content">
                     <span class="logo-text">NYRA<span class="logo-accent">.</span></span>
-                    <span class="logo-tagline">Authority Intelligence</span>
+                    <span class="logo-tagline">Decision Engine</span>
                 </div>
             </a>
 
@@ -38,7 +38,7 @@ gold_header = """
                     </button>
                     <div class="mega-menu">
                          <div class="mega-menu-banner">
-                            ✨ New: <span>Authority Graph™ 2.0 is now live.</span> <a href="/index.html#news"
+                            ✨ New: <span>Decision Engine 2.0 is now live.</span> <a href="/index.html#news"
                                 style="color: var(--secondary); margin-left: 8px;">Explore the engine &rarr;</a>
                         </div>
                         <div class="mega-menu-container">
@@ -46,7 +46,7 @@ gold_header = """
                                 <div class="sidebar-category">Core Engine</div>
                                 <div class="sidebar-item active">
                                     <span>Intel Engine</span>
-                                    <i class="item-desc">Real-time authority tracking</i>
+                                    <i class="item-desc">Real-time decision tracking</i>
                                 </div>
                                 <div class="sidebar-item">
                                     <span>Predictive Graph</span>
@@ -62,9 +62,9 @@ gold_header = """
                                         <div class="grid-item-icon">🔍</div>
                                         <div class="grid-item-text">
                                             <h5>Expert Discovery</h5>
-                                            <p>Map B2B content creators & KOLs by intent.</p>
+                                            <p>Map B2B content creators & experts by intent.</p>
                                         </div>
-                                    </div>
+                                     </div>
                                     <div class="grid-item">
                                         <div class="grid-item-icon">📈</div>
                                         <div class="grid-item-text">
@@ -75,7 +75,7 @@ gold_header = """
                                     <div class="grid-item">
                                         <div class="grid-item-icon">🛡️</div>
                                         <div class="grid-item-text">
-                                            <h5>Authority Audit</h5>
+                                            <h5>Decision Audit</h5>
                                             <p>Technical trust & market-value validation.</p>
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@ gold_header = """
                                         <div class="grid-item-icon">🕸️</div>
                                         <div class="grid-item-text">
                                             <h5>Influence Mapping</h5>
-                                            <p>Visualizing DOL networks and nodes.</p>
+                                            <p>Visualizing expert networks and nodes.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@ gold_header = """
                                             <div class="grid-item-icon">📰</div>
                                             <div class="grid-item-text">
                                                 <h5>Insights Blog</h5>
-                                                <p>Latest trends in B2B authority.</p>
+                                                <p>Latest trends in B2B decision logic.</p>
                                             </div>
                                         </div>
                                     </a>
@@ -165,7 +165,7 @@ gold_header = """
 base_dir = '/Users/olguuysal/.gemini/antigravity/scratch/nyra-landing-page'
 
 # Regex to find header
-header_pattern = re.compile(r'<header class="(navbar|fixed-header-wrapper)">.*?</header>', re.DOTALL)
+header_pattern = re.compile(r'<header.*?</header>', re.DOTALL)
 
 for file_name in files_to_update:
     path = os.path.join(base_dir, file_name)
